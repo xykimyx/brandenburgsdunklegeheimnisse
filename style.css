@@ -446,84 +446,29 @@ footer a:hover {
 /* Mobile-Version */
 
 @media (max-width: 700px) {
-  .hero {
-    min-height: 760px;
-    padding: 0 6% 60px;
-  }
-
   .simple-nav {
-    position: absolute;
     top: 0;
     left: 6%;
     right: 6%;
-
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-
-    padding: 22px 0;
-    font-size: 0.85rem;
+    height: 125px;
   }
 
   .home-link {
+    top: 20px;
+    left: 0;
     max-width: 240px;
     font-size: 0.95rem;
   }
 
   .nav-links {
+    top: 75px;
+    left: 0;
+    right: auto;
+
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
-  }
 
-  .full-width-logo {
-    width: 100vw;
-    height: 430px;
-    margin-left: calc(50% - 50vw);
-  }
-
-  .hero-content {
-    padding-top: 50px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2.3rem, 12vw, 4rem);
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .episode-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .latest-section,
-  .about-page,
-  .episodes-page {
-    padding: 70px 6%;
-  }
-
-  .subpage-header {
-    padding: 22px 6%;
-  }
-
-  .subpage-header .simple-nav {
-    position: static;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .about-cover {
-    width: 140px;
-    height: 140px;
-  }
-
-  footer {
-    padding: 30px 6%;
+    font-size: 0.85rem;
   }
 }
