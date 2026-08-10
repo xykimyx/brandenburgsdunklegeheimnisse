@@ -62,7 +62,7 @@ img {
   left: 0;
 
   display: block;
-  max-width: 280px;
+  max-width: 300px;
 
   color: var(--gold);
   font-family: Georgia, "Times New Roman", serif;
@@ -88,12 +88,17 @@ img {
 
 .nav-links a {
   color: #ffffff;
+  font-size: 0.95rem;
   text-decoration: none;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .nav-links a:hover {
   color: var(--gold);
+}
+
+.mobile-menu-toggle {
+  display: none;
 }
 
 /* Großes Logo-Bild */
