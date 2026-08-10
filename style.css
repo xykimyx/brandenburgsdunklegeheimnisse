@@ -51,26 +51,24 @@ img {
   top: 0;
   left: 7%;
   right: 7%;
-  z-index: 10;
+  z-index: 20;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 28px 0;
-  color: #ffffff;
-  font-size: 0.95rem;
+  height: 90px;
 }
 
 .home-link {
+  position: absolute;
+  top: 28px;
+  left: 0;
+
   display: block;
-  flex: 0 0 auto;
   max-width: 280px;
 
   color: var(--gold);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
   line-height: 1.15;
+  text-decoration: none;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -79,14 +77,18 @@ img {
 }
 
 .nav-links {
+  position: absolute;
+  top: 28px;
+  right: 0;
+
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-left: auto;
 }
 
 .nav-links a {
   color: #ffffff;
+  text-decoration: none;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
