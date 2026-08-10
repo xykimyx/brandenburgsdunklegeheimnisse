@@ -46,7 +46,7 @@ img {
 
 /* Navigation über dem Bild */
 
-.simple-nav {
+..simple-nav {
   position: absolute;
   top: 0;
   left: 7%;
@@ -54,7 +54,7 @@ img {
   z-index: 10;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   gap: 30px;
 
@@ -63,12 +63,31 @@ img {
   font-size: 0.95rem;
 }
 
-.simple-nav a {
+.home-link {
+  max-width: 280px;
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.15;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-  transition: color 0.2s ease;
 }
 
-.simple-nav a:hover {
+.home-link:hover {
+  color: var(--light);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.nav-links a:hover {
   color: var(--gold);
 }
 
