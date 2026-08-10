@@ -450,19 +450,35 @@ footer a:hover {
   }
 
   .simple-nav {
+    position: absolute;
+    top: 0;
     left: 6%;
     right: 6%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+
     padding: 22px 0;
     font-size: 0.85rem;
   }
 
+  .home-link {
+    max-width: 240px;
+    font-size: 0.95rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
   .full-width-logo {
-    width: calc(100% + 12vw);
+    width: 100vw;
     height: 430px;
-    margin-left: -6vw;
+    margin-left: calc(50% - 50vw);
   }
 
   .hero-content {
@@ -477,6 +493,11 @@ footer a:hover {
     font-size: 1rem;
   }
 
+  .episode-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
   .latest-section,
   .about-page,
   .episodes-page {
@@ -487,11 +508,12 @@ footer a:hover {
     padding: 22px 6%;
   }
 
-  .subpage-header nav {
+  .subpage-header .simple-nav {
+    position: static;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 0.85rem;
+    flex-direction: column;
+    padding: 0;
   }
 
   .about-cover {
