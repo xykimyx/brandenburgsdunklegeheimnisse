@@ -543,3 +543,87 @@ footer a:hover {
     padding: 30px 6%;
   }
 }
+
+/* CSS für Unterseite Über den Podcast */
+
+.subpage-header {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  padding: 0 7%;
+  background: var(--black);
+  border-bottom: 1px solid var(--border);
+}
+
+.subpage-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 90px;
+}
+
+.subpage-home-link {
+  display: block;
+  max-width: 300px;
+
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.subpage-home-link:hover {
+  color: var(--light);
+}
+
+.subpage-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: auto;
+}
+
+.subpage-nav-links a {
+  color: var(--light);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.subpage-nav-links a:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 700px) {
+  .subpage-header {
+    padding: 0 6%;
+  }
+
+  .subpage-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    min-height: auto;
+    padding: 16px 0 18px;
+  }
+
+  .subpage-home-link {
+    max-width: 250px;
+    font-size: 0.95rem;
+  }
+
+  .subpage-nav-links {
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-left: 0;
+    font-size: 0.85rem;
+  }
+
+  .subpage-nav-links a {
+    padding: 5px 0;
+    font-size: 0.85rem;
+  }
+}
