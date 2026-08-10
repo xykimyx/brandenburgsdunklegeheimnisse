@@ -29,15 +29,24 @@ a {
 }
 
 .simple-nav {
+  position: absolute;
+  top: 0;
+  left: 7%;
+  right: 7%;
+  z-index: 10;
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 8px 0;
-  color: var(--gray);
+
+  padding: 28px 0;
+  color: #ffffff;
   font-size: 0.95rem;
+}
+
+.simple-nav a {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .simple-nav a:hover {
@@ -45,19 +54,11 @@ a {
 }
 
 .hero {
+  position: relative;
   min-height: 850px;
-  padding: 28px 7%;
-  background:
-    linear-gradient(
-      rgba(17, 17, 17, 0.28),
-      rgba(17, 17, 17, 0.98)
-    ),
-    radial-gradient(
-      circle at center,
-      #554838 0%,
-      #27221d 42%,
-      #111111 78%
-    );
+  padding: 0 7% 80px;
+  overflow: hidden;
+  background: #111111;
 }
 
 .hero-content {
