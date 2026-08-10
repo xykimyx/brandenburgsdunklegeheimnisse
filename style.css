@@ -1,11 +1,13 @@
 :root {
   --black: #111111;
-  --dark: #191919;
+  --dark: #1b1b1b;
   --light: #f3eee5;
   --gray: #aaa49c;
   --gold: #c9a66b;
   --border: #383838;
 }
+
+/* Grundlayout */
 
 * {
   box-sizing: border-box;
@@ -28,6 +30,22 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
+/* Startseite */
+
+.hero {
+  position: relative;
+  min-height: 850px;
+  padding: 0 7% 80px;
+  overflow: hidden;
+  background: var(--black);
+}
+
+/* Navigation über dem Bild */
+
 .simple-nav {
   position: absolute;
   top: 0;
@@ -47,50 +65,119 @@ a {
 
 .simple-nav a {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  transition: color 0.2s ease;
 }
 
 .simple-nav a:hover {
   color: var(--gold);
 }
 
-.hero {
+/* Großes Logo-Bild */
+
+.full-width-logo {
   position: relative;
-  min-height: 850px;
-  padding: 0 7% 80px;
+  width: calc(100% + 14vw);
+  height: 560px;
+  margin-left: -7vw;
   overflow: hidden;
-  background: #111111;
+  background: #171717;
 }
 
+.full-width-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.05) 45%,
+    rgba(17, 17, 17, 0.98) 100%
+  );
+}
+
+.full-width-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Text unter dem Bild */
+
 .hero-content {
-  max-width: 900px;
-  margin: 70px auto 0;
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 65px;
   text-align: center;
 }
 
-.main-logo {
-  display: block;
-  width: min(430px, 82vw);
-  height: auto;
-  max-height: 430px;
-  object-fit: contain;
-  margin: 0 auto 45px;
-  filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.55));
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .hero-content h1 {
   margin: 0 auto 25px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.4rem, 6vw, 5.3rem);
+  font-size: clamp(2.5rem, 6vw, 5.3rem);
   font-weight: normal;
   line-height: 1;
 }
 
 .hero-description {
   max-width: 690px;
-  margin: 0 auto 16px;
+  margin: 0 auto 18px;
   color: var(--gray);
   font-size: 1.08rem;
 }
+
+/* Überschriften und Buttons */
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+h2 {
+  margin: 0 0 22px;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.05;
+}
+
+h3 {
+  margin: 8px 0 14px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 14px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-weight: bold;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* Neueste Folgen auf der Startseite */
 
 .latest-section {
   max-width: 940px;
@@ -110,27 +197,22 @@ a {
   border-top: 1px solid var(--border);
 }
 
-.latest-episode h3 {
-  margin: 8px 0 14px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: normal;
-  line-height: 1.1;
-}
-
 .latest-episode p:not(.episode-meta) {
   color: var(--gray);
 }
 
 .episode-meta {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
   color: var(--gold);
   font-size: 0.78rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
-.spotify-player {
+/* Spotify-Player */
+
+.spotify-player,
+.player {
   margin: 28px 0 18px;
   padding: 12px;
   background: var(--dark);
@@ -138,15 +220,21 @@ a {
   border-radius: 12px;
 }
 
-.spotify-player iframe {
+.spotify-player iframe,
+.player iframe {
   display: block;
   width: 100%;
   max-width: 100%;
+  min-height: 152px;
   border: 0;
   border-radius: 12px;
 }
 
+/* Links zu Folgen */
+
 .text-link {
+  display: inline-block;
+  margin-top: 10px;
   color: var(--gold);
   font-weight: bold;
 }
@@ -168,167 +256,31 @@ a {
   background: var(--gold);
   color: var(--black);
 }
-.eyebrow {
-  margin-bottom: 18px;
-  color: var(--gold);
-  font-size: 0.78rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
 
-h1,
-h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: normal;
-}
+/* Unterseiten-Kopfbereich */
 
-h1 {
-  margin: 0 auto 25px;
-  font-size: clamp(2.8rem, 7vw, 6.2rem);
-  line-height: 0.98;
-}
-
-h2 {
-  margin: 0 0 22px;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  line-height: 1.05;
-}
-
-.hero-content p:not(.eyebrow) {
-  max-width: 620px;
-  margin: 0 auto 32px;
-  color: var(--gray);
-  font-size: 1.08rem;
-}
-
-.button {
-  display: inline-block;
-  padding: 14px 24px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  font-weight: bold;
-  transition: 0.2s ease;
-}
-
-.button:hover {
-  background: var(--gold);
-  color: var(--black);
-}
-
-.section {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 100px 7%;
-}
-
-.section p {
-  color: var(--gray);
-}
-
-.player {
-  margin: 35px 0;
-  padding: 18px;
-  background: var(--dark);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.player iframe {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  border: 0;
-  border-radius: 12px;
-}
-
-.follow-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.follow-buttons a {
-  display: inline-block;
-  padding: 12px 18px;
-  border: 1px solid var(--border);
-  color: var(--light);
-  font-size: 0.9rem;
-}
-
-.follow-buttons a:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-.episode {
-  border-top: 1px solid var(--border);
-}
-
-.instagram-link {
-  display: inline-block;
-  margin-top: 18px;
-  color: var(--gold);
-  font-weight: bold;
-}
-
-.instagram-link:hover {
-  opacity: 0.7;
-}
-
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 35px 7%;
-  border-top: 1px solid var(--border);
-  color: var(--gray);
-  font-size: 0.85rem;
-}
-
-footer p {
-  width: 100%;
-  margin: 0;
-}
-
-footer a:hover {
-  color: var(--gold);
-}
-
-@media (max-width: 700px) {
-  .hero {
-    min-height: 680px;
-    padding: 22px 6%;
-  }
-
-  nav {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .hero-content {
-    margin-top: 150px;
-  }
-
-  .section {
-    padding: 70px 6%;
-  }
-
-  footer {
-    padding: 30px 6%;
-  }
-}
 .subpage-header {
   padding: 28px 7%;
   border-bottom: 1px solid var(--border);
   background: var(--black);
 }
+
+.subpage-header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+.subpage-header nav a {
+  color: var(--gray);
+}
+
+.subpage-header nav a:hover {
+  color: var(--gold);
+}
+
+/* Über-den-Podcast-Seite */
 
 .about-page {
   max-width: 780px;
@@ -337,8 +289,9 @@ footer a:hover {
 }
 
 .about-page h1 {
-  margin-bottom: 30px;
+  margin: 0 0 30px;
   font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
 }
 
 .about-page p {
@@ -360,7 +313,7 @@ footer a:hover {
   margin-bottom: 35px;
   object-fit: cover;
   border: 1px solid var(--gold);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, .4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 blockquote {
@@ -373,6 +326,54 @@ blockquote {
   font-style: italic;
 }
 
+.instagram-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.instagram-link:hover {
+  opacity: 0.7;
+}
+
+/* Folgen-Seite */
+
+.episodes-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 90px 7% 100px;
+}
+
+.episodes-page h1 {
+  margin: 0 0 30px;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+}
+
+.episodes-intro {
+  margin-bottom: 40px;
+  color: var(--gray);
+  font-size: 1.05rem;
+}
+
+.episode-card {
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+}
+
+.episode-card h2 {
+  margin-bottom: 12px;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+}
+
+.episode-card p:not(.episode-meta) {
+  color: var(--gray);
+  font-size: 0.98rem;
+}
+
+/* Zurück-Links */
+
 .back-link {
   margin-top: 50px;
 }
@@ -382,129 +383,90 @@ blockquote {
   font-weight: bold;
 }
 
-
-.episodes-page {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 90px 7% 100px;
-}
-
-.episodes-page h1 {
-  margin-bottom: 30px;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-}
-
-.episodes-intro {
-  color: var(--gray);
-  font-size: 1.05rem;
-  margin-bottom: 40px;
-}
-
-.episode-card {
-  padding: 28px 0;
-  border-top: 1px solid var(--border);
-}
-
-.episode-card h2 {
-  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-  margin-bottom: 12px;
-}
-
-.episode-card p {
-  color: var(--gray);
-  font-size: 0.98rem;
-}
-
-.episode-meta {
-  color: var(--gold);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 8px;
-}
-
-.text-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--gold);
-  font-weight: bold;
-}
-
-.text-link:hover {
+.back-link a:hover {
   opacity: 0.7;
 }
-.spotify-player {
-  margin: 25px 0;
-  padding: 16px;
-  background: var(--dark);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 35px 7%;
+  border-top: 1px solid var(--border);
+  color: var(--gray);
+  font-size: 0.85rem;
 }
 
-.spotify-player iframe {
-  display: block;
+footer p {
   width: 100%;
-  max-width: 100%;
-  border: 0;
-  border-radius: 12px;
+  margin: 0;
 }
 
-.featured-episode {
-  padding-top: 35px;
+footer a:hover {
+  color: var(--gold);
 }
 
+/* Mobile-Version */
 
 @media (max-width: 700px) {
-
-  .simple-nav {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
   .hero {
     min-height: 760px;
-    padding: 22px 6%;
+    padding: 0 6% 60px;
+  }
+
+  .simple-nav {
+    left: 6%;
+    right: 6%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 22px 0;
+    font-size: 0.85rem;
+  }
+
+  .full-width-logo {
+    width: calc(100% + 12vw);
+    height: 430px;
+    margin-left: -6vw;
   }
 
   .hero-content {
-    margin-top: 55px;
+    padding-top: 50px;
   }
 
-  .main-logo {
-    width: min(320px, 82vw);
-    margin-bottom: 35px;
+  .hero-content h1 {
+    font-size: clamp(2.3rem, 12vw, 4rem);
   }
 
-  .latest-section {
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .latest-section,
+  .about-page,
+  .episodes-page {
     padding: 70px 6%;
   }
-}
-.full-width-logo {
-  width: calc(100% + 14vw);
-  height: 560px;
-  margin-left: -7vw;
-  overflow: hidden;
-  position: relative;
-}
 
-.full-width-logo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.05) 45%,
-    rgba(17, 17, 17, 0.95) 100%
-  );
-  pointer-events: none;
-}
+  .subpage-header {
+    padding: 22px 6%;
+  }
 
-.full-width-logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  .subpage-header nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.85rem;
+  }
+
+  .about-cover {
+    width: 140px;
+    height: 140px;
+  }
+
+  footer {
+    padding: 30px 6%;
+  }
 }
