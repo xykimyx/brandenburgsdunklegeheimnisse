@@ -451,54 +451,102 @@ footer a:hover {
 /* Mobile-Version */
 
 @media (max-width: 700px) {
-  .hero {
-    min-height: 760px;
-    padding: 0 6% 60px;
-  }
 
   .simple-nav {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 20;
-
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
+    z-index: 30;
 
     height: auto;
-    padding: 16px 6% 18px;
+    min-height: 76px;
+    padding: 18px 6%;
 
-    background: rgba(17, 17, 17, 0.82);
-    border-bottom: 1px solid rgba(201, 166, 107, 0.35);
+    background: rgba(17, 17, 17, 0.38);
   }
 
   .home-link {
     position: static;
-    display: block;
-    max-width: 280px;
+    max-width: 250px;
+    padding-right: 50px;
 
     color: var(--gold);
     font-size: 0.95rem;
-    line-height: 1.2;
+    line-height: 1.15;
+  }
+
+  .mobile-menu-toggle {
+    position: absolute;
+    top: 19px;
+    right: 6%;
+    z-index: 40;
+
+    display: flex;
+    width: 42px;
+    height: 38px;
+    padding: 8px;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+
+    border: 1px solid rgba(243, 238, 229, 0.7);
+    border-radius: 4px;
+    background: rgba(17, 17, 17, 0.55);
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: var(--light);
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
   .nav-links {
-    position: static;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-    margin: 0;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
 
-    font-size: 0.85rem;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    padding: 8px 6% 16px;
+
+    background: rgba(17, 17, 17, 0.96);
+    border-top: 1px solid rgba(201, 166, 107, 0.35);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links.is-open {
+    display: flex;
   }
 
   .nav-links a {
-    padding: 6px 0;
+    width: 100%;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(243, 238, 229, 0.12);
     color: var(--light);
+    font-size: 0.95rem;
+    text-shadow: none;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: 0;
+  }
+
+  .mobile-menu-toggle.is-open span:first-child {
+    transform: translateY(4.5px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle.is-open span:last-child {
+    transform: translateY(-4.5px) rotate(-45deg);
   }
 
   .full-width-logo {
@@ -510,44 +558,8 @@ footer a:hover {
   .full-width-logo img {
     object-position: center center;
   }
-
-  .hero-content {
-    padding-top: 50px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2.3rem, 12vw, 4rem);
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .episode-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .latest-section,
-  .about-page,
-  .episodes-page {
-    padding: 70px 6%;
-  }
-
-  .subpage-header {
-    padding: 0;
-  }
-
-  .subpage-header .simple-nav {
-    position: static;
-    align-items: flex-start;
-    padding: 16px 6% 18px;
-  }
-
-  footer {
-    padding: 30px 6%;
-  }
 }
+
 
 /* CSS für Unterseite Über den Podcast */
 
