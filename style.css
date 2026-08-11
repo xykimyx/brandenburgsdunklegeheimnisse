@@ -886,3 +886,98 @@ footer a:hover {
     visibility: visible !important;
   }
 }
+/* =====================================================
+   DESKTOP-NAVIGATION KORRIGIEREN
+   Gilt nur ab 701px Bildschirmbreite
+   ===================================================== */
+
+@media (min-width: 701px) {
+  .mobile-nav {
+    position: absolute !important;
+    top: 0 !important;
+    left: 7% !important;
+    right: 7% !important;
+    z-index: 100 !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: auto !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .mobile-home-link {
+    position: static !important;
+    display: block !important;
+
+    width: auto !important;
+    max-width: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: var(--gold) !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 1.05rem !important;
+    line-height: 1.15 !important;
+    white-space: normal !important;
+  }
+
+  .mobile-menu {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 30px !important;
+
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    transform: none !important;
+  }
+
+  .mobile-menu a {
+    position: static !important;
+
+    display: block !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+
+    border: 0 !important;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--gold) !important;
+  }
+
+  .mobile-start-link {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: none !important;
+  }
+}
