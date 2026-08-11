@@ -597,6 +597,12 @@ blockquote {
   max-width: 760px;
 }
 
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 50px;
+}
 
 /* =====================================================
    11. FOOTER
@@ -897,6 +903,19 @@ footer a:hover {
   }
 }
 
+@media (max-width: 900px) and (min-width: 701px) {
+  .episode-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .episode-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
 
 /* =====================================================
    14. KLEINE SMARTPHONES
@@ -915,3 +934,5 @@ footer a:hover {
     font-size: 0.9rem;
   }
 }
+
+
