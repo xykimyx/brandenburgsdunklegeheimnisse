@@ -926,4 +926,93 @@ footer a:hover {
   }
 }
 
+/* =====================================================
+   TRENNER ZWISCHEN DEN FOLGEN
+   ===================================================== */
 
+.episodes-grid {
+  row-gap: 42px;
+  column-gap: 26px;
+}
+
+.episodes-grid .full-episode {
+  position: relative;
+
+  padding: 30px 26px 26px;
+
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Dezente kupferfarbene Linie oben auf jeder Folge */
+
+.episodes-grid .full-episode::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 26px;
+  right: 26px;
+
+  height: 1px;
+
+  background: var(--gold);
+  opacity: 0.65;
+}
+
+.episodes-grid .full-episode-number {
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+
+.episodes-grid .full-episode-content h2 {
+  margin-top: 10px;
+}
+
+.episodes-grid .spotify-button {
+  margin-top: 22px;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) and (min-width: 701px) {
+  .episodes-grid {
+    row-gap: 32px;
+    column-gap: 20px;
+  }
+
+  .episodes-grid .full-episode {
+    padding: 26px 22px 22px;
+  }
+
+  .episodes-grid .full-episode::before {
+    left: 22px;
+    right: 22px;
+  }
+}
+
+
+/* Smartphone */
+
+@media (max-width: 700px) {
+  .episodes-grid {
+    row-gap: 28px;
+  }
+
+  .episodes-grid .full-episode {
+    padding: 26px 22px 22px;
+  }
+
+  .episodes-grid .full-episode::before {
+    left: 22px;
+    right: 22px;
+  }
+}
