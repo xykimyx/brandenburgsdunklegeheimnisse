@@ -1,13 +1,23 @@
+/* =====================================================
+   BRANDENBURGS DUNKLE GEHEIMNISSE
+   Komplette Website-CSS
+   ===================================================== */
+
+
+/* =====================================================
+   1. GRUNDLAYOUT
+   ===================================================== */
+
 :root {
-  --black: #111111;
-  --dark: #1b1b1b;
+  --black: #000000;
+  --background: #111111;
+  --dark: #181818;
+  --surface: #222222;
   --light: #f3eee5;
   --gray: #aaa49c;
   --gold: #c9a66b;
   --border: #383838;
 }
-
-/* Grundlayout */
 
 * {
   box-sizing: border-box;
@@ -15,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--black);
 }
 
 body {
@@ -23,6 +34,7 @@ body {
   color: var(--light);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -31,38 +43,66 @@ a {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
-/* Startseite */
+button {
+  font: inherit;
+}
+
+
+/* =====================================================
+   2. STARTSEITE: HERO-BEREICH
+   ===================================================== */
 
 .hero {
   position: relative;
-  min-height: 850px;
+  min-height: 0;
+  margin: 0;
   padding: 0 7% 80px;
   overflow: hidden;
   background: var(--black);
 }
 
-/* Navigation über dem Bild */
 
-.simple-nav {
+/* =====================================================
+   3. NAVIGATION
+   Desktop:
+   Titel links, Links rechts
+
+   Smartphone:
+   Titel ausgeblendet, Hamburger rechts
+   ===================================================== */
+
+
+/* Desktop-Navigation */
+
+.mobile-nav {
   position: absolute;
   top: 0;
   left: 7%;
   right: 7%;
-  z-index: 20;
+  z-index: 100;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: auto;
   height: 90px;
+  min-height: 90px;
+  margin: 0;
+  padding: 0;
 }
 
-.home-link {
-  position: absolute;
-  top: 28px;
-  left: 0;
-
+.mobile-home-link {
   display: block;
+  flex: 0 0 auto;
+
   max-width: 300px;
+  margin: 0;
+  padding: 0;
 
   color: var(--gold);
   font-family: Georgia, "Times New Roman", serif;
@@ -72,116 +112,138 @@ img {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-.home-link:hover {
+.mobile-home-link:hover {
   color: var(--light);
 }
 
-.nav-links {
-  position: absolute;
-  top: 28px;
-  right: 0;
+
+/* Rechte Desktop-Navigation */
+
+.nav-right {
+  position: static;
 
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
   gap: 30px;
+
+  width: auto;
+  height: auto;
+  margin: 0 0 0 auto;
+  padding: 0;
+
+  background: transparent;
+  border: 0;
 }
 
-.nav-links a {
+.nav-right a {
+  display: block;
+
+  width: auto;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 8px 0;
+
+  border: 0;
   color: #ffffff;
   font-size: 0.95rem;
+  line-height: 1.2;
+  white-space: nowrap;
   text-decoration: none;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-.nav-links a:hover {
+.nav-right a:hover {
   color: var(--gold);
 }
 
-.mobile-menu-toggle {
+
+/* Startseite nur im mobilen Menü */
+
+.mobile-start-link {
   display: none;
 }
 
-/* Großes Logo-Bild */
+
+/* Hamburger auf Desktop ausblenden */
+
+.mobile-toggle {
+  display: none;
+}
+
+
+/* =====================================================
+   4. GROSSES STARTSEITEN-BILD
+   ===================================================== */
 
 .full-width-logo {
   position: relative;
+
   width: 100vw;
-  height: auto;
-  margin-top: 0;
+  height: clamp(520px, 68vh, 720px);
   margin-left: calc(50% - 50vw);
+
   overflow: hidden;
-  background: #171717;
+  background: var(--black);
+}
+
+.full-width-logo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  max-width: none;
+
+  object-fit: cover;
+  object-position: center center;
+  background: var(--black);
 }
 
 .full-width-logo::after {
   content: "";
+
   position: absolute;
   inset: 0;
   z-index: 1;
+
   pointer-events: none;
 
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.03) 50%,
-    rgba(17, 17, 17, 0.98) 100%
+    rgba(0, 0, 0, 0.18) 0%,
+    rgba(0, 0, 0, 0.03) 48%,
+    rgba(0, 0, 0, 0.98) 100%
   );
 }
 
-.full-width-logo img {
-  position: relative;
-  z-index: 0;
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: none;
-  object-fit: contain;
-}
 
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  overflow-x: hidden;
-}
-
-/* Text unter dem Bild */
+/* =====================================================
+   5. TEXT UNTER DEM STARTSEITEN-BILD
+   ===================================================== */
 
 .hero-content {
   position: relative;
   z-index: 2;
+
   max-width: 760px;
   margin: 0 auto;
-  padding-top: 65px;
+  padding: 65px 0 0;
+
+  background: var(--black);
   text-align: center;
 }
 
 .eyebrow {
   margin: 0 0 18px;
+
   color: var(--gold);
   font-size: 0.78rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-
-.hero-content h1 {
-  margin: 0 auto 25px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.5rem, 6vw, 5.3rem);
-  font-weight: normal;
-  line-height: 1;
-}
-
-.hero-description {
-  max-width: 690px;
-  margin: 0 auto 18px;
-  color: var(--gray);
-  font-size: 1.08rem;
-}
-
-/* Überschriften und Buttons */
 
 h1,
 h2,
@@ -190,26 +252,39 @@ h3 {
   font-weight: normal;
 }
 
-h2 {
-  margin: 0 0 22px;
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  line-height: 1.05;
+.hero-content h1 {
+  margin: 0 auto 25px;
+
+  font-size: clamp(2.5rem, 6vw, 5.3rem);
+  line-height: 1;
 }
 
-h3 {
-  margin: 8px 0 14px;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.1;
+.hero-description {
+  max-width: 690px;
+  margin: 0 auto 18px;
+
+  color: var(--gray);
+  font-size: 1.08rem;
 }
+
+
+/* =====================================================
+   6. BUTTONS
+   ===================================================== */
 
 .button {
   display: inline-block;
+
   margin-top: 15px;
   padding: 14px 24px;
+
   border: 1px solid var(--gold);
   color: var(--gold);
+
   font-weight: bold;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .button:hover {
@@ -217,63 +292,33 @@ h3 {
   color: var(--black);
 }
 
-/* Neueste Folgen auf der Startseite */
+.spotify-button {
+  display: inline-block;
 
-.latest-section {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 100px 7%;
+  margin-top: 8px;
+  padding: 13px 22px;
+
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--black);
+
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-.section-intro {
-  max-width: 700px;
-  color: var(--gray);
-  font-size: 1.05rem;
-}
-
-.latest-episode {
-  margin-top: 50px;
-  padding: 30px 0;
-  border-top: 1px solid var(--border);
-}
-
-.latest-episode p:not(.episode-meta) {
-  color: var(--gray);
-}
-
-.episode-meta {
-  margin: 0 0 8px;
+.spotify-button:hover {
+  background: transparent;
   color: var(--gold);
-  font-size: 0.78rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
 }
-
-/* Spotify-Player */
-
-.spotify-player,
-.player {
-  margin: 28px 0 18px;
-  padding: 12px;
-  background: var(--dark);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.spotify-player iframe,
-.player iframe {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-height: 152px;
-  border: 0;
-  border-radius: 12px;
-}
-
-/* Links zu Folgen */
 
 .text-link {
   display: inline-block;
+
   margin-top: 10px;
   color: var(--gold);
   font-weight: bold;
@@ -283,10 +328,125 @@ h3 {
   opacity: 0.7;
 }
 
+
+/* =====================================================
+   7. NEUESTE FOLGEN AUF DER STARTSEITE
+   ===================================================== */
+
+.latest-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 7%;
+
+  background: var(--black);
+}
+
+.latest-section h2 {
+  margin: 0 0 22px;
+
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.section-intro {
+  max-width: 700px;
+  margin: 0;
+
+  color: var(--gray);
+  font-size: 1.05rem;
+}
+
+
+/* Drei Folgen nebeneinander */
+
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+
+  margin-top: 50px;
+}
+
+.latest-episode {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  margin: 0;
+  padding: 24px;
+
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.latest-episode h3 {
+  margin: 8px 0 14px;
+
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  line-height: 1.1;
+}
+
+.latest-episode p:not(.episode-meta) {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.episode-meta {
+  margin: 0 0 8px;
+
+  color: var(--gold);
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+
+/* Spotify-Player */
+
+.spotify-player,
+.player {
+  margin: 28px 0 18px;
+  padding: 12px;
+
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.spotify-player iframe,
+.player iframe {
+  display: block;
+
+  width: 100%;
+  min-height: 152px;
+
+  border: 0;
+  border-radius: 12px;
+}
+
+.latest-episode .spotify-player {
+  margin-top: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+
+/* Button unter allen Folgen */
+
+.latest-episode .spotify-button {
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+}
+
 .all-episodes-button {
   display: inline-block;
+
   margin-top: 35px;
   padding: 14px 22px;
+
   border: 1px solid var(--gold);
   color: var(--gold);
   font-weight: bold;
@@ -297,39 +457,38 @@ h3 {
   color: var(--black);
 }
 
-/* Unterseiten-Kopfbereich */
+
+/* =====================================================
+   8. UNTERSEITEN: HEADER OHNE BILD
+   ===================================================== */
 
 .subpage-header {
-  padding: 28px 7%;
-  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 20;
+
+  min-height: 90px;
+  padding: 0 7%;
+
   background: var(--black);
+  border-bottom: 1px solid var(--border);
 }
 
-.subpage-header nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 30px;
-}
 
-.subpage-header nav a {
-  color: var(--gray);
-}
-
-.subpage-header nav a:hover {
-  color: var(--gold);
-}
-
-/* Über-den-Podcast-Seite */
+/* =====================================================
+   9. ÜBER-DEN-PODCAST-SEITE
+   ===================================================== */
 
 .about-page {
   max-width: 780px;
   margin: 0 auto;
-  padding: 90px 7% 100px;
+  padding: 90px 7% 110px;
+
+  background: var(--black);
 }
 
 .about-page h1 {
   margin: 0 0 30px;
+
   font-size: clamp(2.5rem, 6vw, 5rem);
   line-height: 1;
 }
@@ -347,10 +506,10 @@ h3 {
 }
 
 .about-cover {
-  display: block;
   width: 180px;
   height: 180px;
   margin-bottom: 35px;
+
   object-fit: cover;
   border: 1px solid var(--gold);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
@@ -359,8 +518,10 @@ h3 {
 blockquote {
   margin: 45px 0;
   padding: 25px 0 25px 25px;
+
   border-left: 2px solid var(--gold);
   color: var(--gold);
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   font-style: italic;
@@ -368,74 +529,90 @@ blockquote {
 
 .instagram-link {
   display: inline-block;
+
   margin-top: 18px;
   color: var(--gold);
   font-weight: bold;
 }
 
-.instagram-link:hover {
-  opacity: 0.7;
-}
 
-/* Folgen-Seite */
+/* =====================================================
+   10. FOLGEN-SEITE
+   ===================================================== */
 
 .episodes-page {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 90px 7% 100px;
+  padding: 90px 7% 110px;
+
+  background: var(--black);
 }
 
 .episodes-page h1 {
-  margin: 0 0 30px;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  max-width: 800px;
+  margin: 0 0 28px;
+
+  font-size: clamp(2.5rem, 6vw, 5rem);
   line-height: 1;
 }
 
 .episodes-intro {
-  margin-bottom: 40px;
+  max-width: 700px;
+  margin: 0 0 70px;
+
   color: var(--gray);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
+}
+
+.episodes-list {
+  width: 100%;
 }
 
 .episode-card {
-  padding: 30px 0;
+  width: 100%;
+  margin: 0;
+  padding: 42px 0;
+
   border-top: 1px solid var(--border);
 }
 
+.episode-card:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
 .episode-card h2 {
-  margin-bottom: 12px;
-  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  margin: 8px 0 18px;
+
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
 }
 
 .episode-card p:not(.episode-meta) {
+  max-width: 720px;
   color: var(--gray);
-  font-size: 0.98rem;
+  font-size: 1.02rem;
 }
 
-/* Zurück-Links */
-
-.back-link {
-  margin-top: 50px;
+.episode-card .spotify-player {
+  max-width: 760px;
 }
 
-.back-link a {
-  color: var(--gold);
-  font-weight: bold;
-}
 
-.back-link a:hover {
-  opacity: 0.7;
-}
-
-/* Footer */
+/* =====================================================
+   11. FOOTER
+   ===================================================== */
 
 footer {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+
   padding: 35px 7%;
+
+  background: var(--black);
   border-top: 1px solid var(--border);
   color: var(--gray);
+
   font-size: 0.85rem;
 }
 
@@ -448,191 +625,38 @@ footer a:hover {
   color: var(--gold);
 }
 
-/* Mobile-Version */
-
-@media (max-width: 700px) {
-
-  .simple-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 30;
-
-    height: auto;
-    min-height: 76px;
-    padding: 18px 6%;
-
-    background: rgba(17, 17, 17, 0.38);
-  }
-
-  .home-link {
-    position: static;
-    max-width: 250px;
-    padding-right: 50px;
-
-    color: var(--gold);
-    font-size: 0.95rem;
-    line-height: 1.15;
-  }
-
-  .mobile-menu-toggle {
-    position: absolute;
-    top: 19px;
-    right: 6%;
-    z-index: 40;
-
-    display: flex;
-    width: 42px;
-    height: 38px;
-    padding: 8px;
-
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 7px;
-
-    border: 1px solid rgba(243, 238, 229, 0.7);
-    border-radius: 4px;
-    background: rgba(17, 17, 17, 0.55);
-    cursor: pointer;
-  }
-
-  .mobile-menu-toggle span {
-    display: block;
-    width: 23px;
-    height: 2px;
-    background: var(--light);
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 76px;
-    left: 0;
-    right: 0;
-
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-
-    padding: 8px 6% 16px;
-
-    background: rgba(17, 17, 17, 0.96);
-    border-top: 1px solid rgba(201, 166, 107, 0.35);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-links.is-open {
-    display: flex;
-  }
-
-  .nav-links a {
-    width: 100%;
-    padding: 13px 0;
-    border-bottom: 1px solid rgba(243, 238, 229, 0.12);
-    color: var(--light);
-    font-size: 0.95rem;
-    text-shadow: none;
-  }
-
-  .nav-links a:last-child {
-    border-bottom: 0;
-  }
-
-  .mobile-menu-toggle.is-open span:first-child {
-    transform: translateY(4.5px) rotate(45deg);
-  }
-
-  .mobile-menu-toggle.is-open span:last-child {
-    transform: translateY(-4.5px) rotate(-45deg);
-  }
-
-  .full-width-logo {
-    width: 100vw;
-    height: 500px;
-    margin-left: calc(50% - 50vw);
-  }
-
-  .full-width-logo img {
-    object-position: center center;
-  }
-}
-
-
-/* CSS für Unterseite Über den Podcast */
-
-.subpage-header {
-  position: relative;
-  z-index: 20;
-  width: 100%;
-  padding: 0 7%;
-  background: var(--black);
-  border-bottom: 1px solid var(--border);
-}
-
-.subpage-nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 100%;
-  min-height: 90px;
-}
-
-.subpage-home-link {
-  display: block;
-  max-width: 300px;
-
-  color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05rem;
-  line-height: 1.15;
-  text-decoration: none;
-}
-
-.subpage-home-link:hover {
-  color: var(--light);
-}
-
-.subpage-nav-links {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-left: auto;
-}
-
-.subpage-nav-links a {
-  color: var(--light);
-  font-size: 0.95rem;
-  text-decoration: none;
-}
-
-.subpage-nav-links a:hover {
-  color: var(--gold);
-}
-
-.mobile-start-link {
-  display: none;
-}
 
 /* =====================================================
-   MOBILE-FIX: kompakter Banner und schwarzer Hintergrund
+   12. TABLET
+   ===================================================== */
+
+@media (max-width: 900px) and (min-width: 701px) {
+  .episode-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mobile-nav {
+    left: 5%;
+    right: 5%;
+  }
+
+  .nav-right {
+    gap: 20px;
+  }
+}
+
+
+/* =====================================================
+   13. SMARTPHONE
    ===================================================== */
 
 @media (max-width: 700px) {
-
-  /* Gesamte mobile Seite schwarz */
   html,
   body {
     width: 100%;
     min-height: 100%;
     margin: 0;
-    padding: 0;
-    background: #000000 !important;
-    color: var(--light);
+    background: #000000;
     overflow-x: hidden;
   }
 
@@ -642,46 +666,147 @@ footer a:hover {
   .latest-section,
   .about-page,
   .episodes-page {
-    background: #000000 !important;
-  }
-
-  /* Hero darf nicht künstlich 760px oder mehr hoch sein */
-  .hero {
-    min-height: 0 !important;
-    height: auto !important;
-    margin: 0;
-    padding: 0 0 40px !important;
-  }
-
-  /* Bild über die komplette Handybreite */
-  .full-width-logo {
-    position: relative;
-    width: 100vw !important;
-    height: 330px !important;
-    margin: 0 !important;
-    padding: 0;
-    overflow: hidden;
     background: #000000;
   }
 
-  /* Bild ohne zusätzlichen weißen oder farbigen Hintergrund */
-  .full-width-logo img {
+  /* Hero kompakt halten */
+  .hero {
+    min-height: 0;
+    height: auto;
+    padding: 0 0 40px;
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
     display: block;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none;
+    width: 100%;
+    height: 76px;
+    min-height: 76px;
+    padding: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .mobile-home-link {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mobile-toggle {
+    position: absolute;
+    top: 16px;
+    right: 6%;
+    z-index: 102;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+
+    border: 1px solid var(--light);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
+
+  .mobile-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    background: var(--light);
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-toggle.is-open span:first-child {
+    transform: translateY(4.5px) rotate(45deg);
+  }
+
+  .mobile-toggle.is-open span:last-child {
+    transform: translateY(-4.5px) rotate(-45deg);
+  }
+
+  /* Mobile-Menü geschlossen */
+  .nav-right {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    z-index: 101;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 8px 6% 14px;
+
+    background: #000000;
+    border-top: 1px solid rgba(201, 166, 107, 0.45);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Mobile-Menü geöffnet */
+  .nav-right.is-open {
+    display: flex;
+  }
+
+  .nav-right a {
+    display: block;
+
+    width: 100%;
+    min-height: 44px;
+    padding: 13px 0;
+
+    border-bottom: 1px solid rgba(243, 238, 229, 0.15);
+    color: var(--light);
+
+    font-size: 0.95rem;
+    text-shadow: none;
+  }
+
+  .nav-right a:last-child {
+    border-bottom: 0;
+  }
+
+  .mobile-start-link {
+    display: block;
+  }
+
+  /* Mobile Banner */
+  .full-width-logo {
+    width: 100vw;
+    height: 330px;
+    margin: 0;
+
+    background: #000000;
+  }
+
+  .full-width-logo img {
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
     object-position: center center;
     background: #000000;
   }
 
-  /* Dunkler Übergang vom Bild zum schwarzen Textbereich */
   .full-width-logo::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.08) 0%,
@@ -690,294 +815,103 @@ footer a:hover {
     );
   }
 
-  /* Text direkt unter das Bild setzen */
+  /* Text direkt unter dem Bild */
   .hero-content {
-    position: relative;
-    z-index: 2;
     width: 100%;
     max-width: 100%;
-    margin: 0 !important;
-    padding: 26px 6% 0 !important;
+    margin: 0;
+    padding: 26px 6% 0;
+
     background: #000000;
-    text-align: center;
   }
 
   .hero-content h1 {
     margin-top: 0;
     margin-bottom: 18px;
+
+    font-size: clamp(2.3rem, 12vw, 4rem);
   }
 
   .hero-description {
-    margin-bottom: 14px;
+    font-size: 1rem;
   }
 
-  /* Neueste Folgen ohne zusätzlichen hellen Bereich */
+  /* Folgen als eine Spalte */
+  .episode-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
   .latest-section {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 60px 6% 80px !important;
-    background: #000000 !important;
+    padding: 60px 6% 80px;
   }
 
-  /* Falls Folgenkarten vorhanden sind */
-  .latest-episode,
+  .latest-episode {
+    padding: 22px;
+  }
+
+  /* Unterseiten */
+  .subpage-header {
+    min-height: 76px;
+    padding: 0 6%;
+  }
+
+  .about-page,
+  .episodes-page {
+    width: 100%;
+    padding: 70px 6% 85px;
+  }
+
+  .about-page h1,
+  .episodes-page h1 {
+    font-size: clamp(2.3rem, 11vw, 4rem);
+  }
+
+  .episodes-intro {
+    margin-bottom: 45px;
+  }
+
   .episode-card {
-    background: #111111;
+    padding: 32px 0;
   }
 
-  /* =====================================================
-   NAVIGATION DES PODCASTS
-   Desktop: Links sichtbar
-   Smartphone: Hamburger-Menü
-   ===================================================== */
-
-
-@media (min-width: 701px) {
-  .mobile-nav {
-    position: absolute !important;
-    top: 0 !important;
-    left: 7% !important;
-    right: 7% !important;
-    z-index: 100 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-
-    width: auto !important;
-    min-height: 90px !important;
-    height: 90px !important;
-    padding: 0 !important;
+  .episode-card h2 {
+    font-size: 2.2rem;
   }
 
-  .mobile-home-link {
-    position: static !important;
-    display: block !important;
-    flex: 0 0 auto !important;
-
-    max-width: 300px !important;
-    margin: 0 !important;
-    color: var(--gold) !important;
-
-    font-family: Georgia, "Times New Roman", serif !important;
-    font-size: 1.05rem !important;
-    line-height: 1.15 !important;
-    text-decoration: none !important;
+  .about-cover {
+    width: 140px;
+    height: 140px;
   }
 
-  .mobile-menu {
-    position: static !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: 30px !important;
-
-    width: auto !important;
-    height: auto !important;
-    margin: 0 0 0 auto !important;
-    padding: 0 !important;
-
-    background: transparent !important;
-    border: 0 !important;
+  .spotify-button {
+    width: 100%;
+    text-align: center;
   }
 
-  .mobile-menu a {
-    display: block !important;
-    width: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 8px 0 !important;
-
-    border: 0 !important;
-    color: #ffffff !important;
-    font-size: 0.95rem !important;
-    white-space: nowrap !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
-  }
-
-  .mobile-start-link {
-    display: none !important;
-  }
-
-  .mobile-toggle {
-    display: none !important;
+  footer {
+    padding: 30px 6%;
   }
 }
 
-/* Smartphone: Titel komplett ausblenden, Hamburger rechts */
 
-@media (max-width: 700px) {
-  .mobile-nav {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 100 !important;
-
-    display: block !important;
-    width: 100% !important;
-    min-height: 76px !important;
-    height: 76px !important;
-    padding: 0 !important;
-
-    background: rgba(0, 0, 0, 0.45) !important;
-  }
-
-  .mobile-home-link {
-    display: none !important;
-    visibility: hidden !important;
-  }
-
-  .mobile-toggle {
-    position: absolute !important;
-    top: 16px !important;
-    right: 6% !important;
-    z-index: 102 !important;
-
-    display: flex !important;
-    width: 44px !important;
-    height: 44px !important;
-    margin: 0 !important;
-  }
-
-  .mobile-menu {
-    position: absolute !important;
-    top: 76px !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 101 !important;
-
-    display: none !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0 !important;
-
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 8px 6% 14px !important;
-
-    background: #000000 !important;
-    border-top: 1px solid rgba(201, 166, 107, 0.45) !important;
-    border-bottom: 1px solid #383838 !important;
-  }
-
-  .mobile-menu.is-open {
-    display: flex !important;
-  }
-
-  .mobile-menu a {
-    display: block !important;
-    width: 100% !important;
-    min-height: 44px !important;
-    margin: 0 !important;
-    padding: 13px 0 !important;
-
-    border-bottom: 1px solid rgba(243, 238, 229, 0.15) !important;
-    color: var(--light) !important;
-    font-size: 0.95rem !important;
-    text-shadow: none !important;
-  }
-
-  .mobile-start-link {
-    display: block !important;
-    visibility: visible !important;
-  }
-}
 /* =====================================================
-   DESKTOP-NAVIGATION KORRIGIEREN
-   Gilt nur ab 701px Bildschirmbreite
+   14. KLEINE SMARTPHONES
    ===================================================== */
 
-@media (min-width: 701px) {
-  .mobile-nav {
-    position: absolute !important;
-    top: 0 !important;
-    left: 7% !important;
-    right: 7% !important;
-    z-index: 100 !important;
-
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-
-    width: auto !important;
-    height: 90px !important;
-    min-height: 90px !important;
-    margin: 0 !important;
-    padding: 0 !important;
+@media (max-width: 380px) {
+  .full-width-logo {
+    height: 290px;
   }
 
-  .mobile-home-link {
-    position: static !important;
-    display: block !important;
-
-    width: auto !important;
-    max-width: 300px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-
-    color: var(--gold) !important;
-    font-family: Georgia, "Times New Roman", serif !important;
-    font-size: 1.05rem !important;
-    line-height: 1.15 !important;
-    white-space: normal !important;
+  .hero-content {
+    padding-top: 22px;
   }
 
-  .mobile-menu {
-    position: static !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: 30px !important;
-
-    width: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 0 0 auto !important;
-    padding: 0 !important;
-
-    background: transparent !important;
-    border: 0 !important;
-    transform: none !important;
-  }
-
-  .mobile-menu a {
-    position: static !important;
-
-    display: block !important;
-    width: auto !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 8px 0 !important;
-
-    border: 0 !important;
-    color: #ffffff !important;
-    font-size: 0.95rem !important;
-    line-height: 1.2 !important;
-    white-space: nowrap !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
-  }
-
-  .mobile-menu a:hover {
-    color: var(--gold) !important;
-  }
-
-  .mobile-start-link {
-    display: none !important;
-  }
-
-  .mobile-toggle {
-    display: none !important;
+  .nav-right a {
+    font-size: 0.9rem;
   }
 }
