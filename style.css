@@ -732,167 +732,157 @@ footer a:hover {
    Smartphone: Hamburger-Menü
    ===================================================== */
 
-/* Desktop-Navigation */
 
-.mobile-nav {
-  position: absolute;
-  top: 0;
-  left: 7%;
-  right: 7%;
-  z-index: 100;
+@media (min-width: 701px) {
+  .mobile-nav {
+    position: absolute !important;
+    top: 0 !important;
+    left: 7% !important;
+    right: 7% !important;
+    z-index: 100 !important;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 
-  min-height: 90px;
+    width: auto !important;
+    min-height: 90px !important;
+    height: 90px !important;
+    padding: 0 !important;
+  }
+
+  .mobile-home-link {
+    position: static !important;
+    display: block !important;
+    flex: 0 0 auto !important;
+
+    max-width: 300px !important;
+    margin: 0 !important;
+    color: var(--gold) !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 1.05rem !important;
+    line-height: 1.15 !important;
+    text-decoration: none !important;
+  }
+
+  .mobile-menu {
+    position: static !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 30px !important;
+
+    width: auto !important;
+    height: auto !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .mobile-menu a {
+    display: block !important;
+    width: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+
+    border: 0 !important;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    white-space: nowrap !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .mobile-start-link {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: none !important;
+  }
 }
 
-.mobile-home-link {
-  display: block;
-  max-width: 300px;
-
-  color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05rem;
-  line-height: 1.15;
-  text-decoration: none;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.mobile-home-link:hover {
-  color: var(--light);
-}
-
-.mobile-menu {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.mobile-menu a {
-  display: block;
-  color: var(--light);
-  font-size: 0.95rem;
-  text-decoration: none;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.mobile-menu a:hover {
-  color: var(--gold);
-}
-
-.mobile-start-link {
-  display: none !important;
-}
-
-.mobile-toggle {
-  display: none;
-}
-
-/* Smartphone-Navigation */
+/* Smartphone: Titel komplett ausblenden, Hamburger rechts */
 
 @media (max-width: 700px) {
   .mobile-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100 !important;
 
-    display: block;
-    min-height: 76px;
-    padding: 0 6%;
+    display: block !important;
+    width: 100% !important;
+    min-height: 76px !important;
+    height: 76px !important;
+    padding: 0 !important;
 
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.45) !important;
   }
 
-  /* Titel links im Handy-Menü ausblenden */
   .mobile-home-link {
     display: none !important;
+    visibility: hidden !important;
   }
 
-  /* Zwei-Striche-Button anzeigen */
   .mobile-toggle {
-    position: absolute;
-    top: 18px;
-    right: 6%;
-    z-index: 102;
+    position: absolute !important;
+    top: 16px !important;
+    right: 6% !important;
+    z-index: 102 !important;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 7px;
-
-    width: 44px;
-    height: 44px;
-    padding: 8px;
-
-    border: 1px solid var(--light);
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.65);
-    cursor: pointer;
+    display: flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin: 0 !important;
   }
 
-  .mobile-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--light);
-    transition: transform 0.2s ease;
-  }
-
-  /* Menü geschlossen */
   .mobile-menu {
-    position: absolute;
-    top: 76px;
-    left: 0;
-    right: 0;
+    position: absolute !important;
+    top: 76px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 101 !important;
 
     display: none !important;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
 
-    padding: 8px 6% 14px;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 8px 6% 14px !important;
 
-    background: #000000;
-    border-top: 1px solid rgba(201, 166, 107, 0.45);
-    border-bottom: 1px solid #383838;
+    background: #000000 !important;
+    border-top: 1px solid rgba(201, 166, 107, 0.45) !important;
+    border-bottom: 1px solid #383838 !important;
   }
 
-  /* Menü geöffnet */
   .mobile-menu.is-open {
     display: flex !important;
   }
 
   .mobile-menu a {
-    width: 100%;
-    min-height: 44px;
-    padding: 13px 0;
+    display: block !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 13px 0 !important;
 
-    border-bottom: 1px solid rgba(243, 238, 229, 0.15);
-    color: var(--light);
-    font-size: 0.95rem;
-    text-shadow: none;
+    border-bottom: 1px solid rgba(243, 238, 229, 0.15) !important;
+    color: var(--light) !important;
+    font-size: 0.95rem !important;
+    text-shadow: none !important;
   }
 
-  .mobile-menu a:last-child {
-    border-bottom: 0;
-  }
-
-  /* Startseite nur auf dem Handy anzeigen */
   .mobile-start-link {
     display: block !important;
-  }
-
-  /* Button wird beim Öffnen zum Kreuz */
-  .mobile-toggle.is-open span:first-child {
-    transform: translateY(4.5px) rotate(45deg);
-  }
-
-  .mobile-toggle.is-open span:last-child {
-    transform: translateY(-4.5px) rotate(-45deg);
+    visibility: visible !important;
   }
 }
