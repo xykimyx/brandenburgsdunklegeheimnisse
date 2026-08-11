@@ -960,3 +960,48 @@ footer a:hover {
   row-gap: 26px !important;
   column-gap: 26px !important;
 }
+
+/* =====================================================
+   ABSTAND ZWISCHEN DEN FOLGENKARTEN
+   ===================================================== */
+
+.episodes-grid {
+  display: grid !important;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+  column-gap: 26px !important;
+  row-gap: 32px !important;
+}
+
+
+/* Rahmen der einzelnen Folgen */
+
+.episodes-grid .full-episode {
+  border: 1px solid #383838 !important;
+  border-top: 1px solid #383838 !important;
+  border-radius: 8px !important;
+  background: #181818 !important;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) and (min-width: 701px) {
+  .episodes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 20px !important;
+    row-gap: 26px !important;
+  }
+}
+
+
+/* Smartphone */
+
+@media (max-width: 700px) {
+  .episodes-grid {
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    row-gap: 18px !important;
+  }
+}
