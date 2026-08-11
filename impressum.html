@@ -16,18 +16,36 @@
 
 <body>
 
+  <!-- Navigation oben mit mobilem Menü -->
   <header class="subpage-header">
-    <nav class="subpage-nav">
-      <a class="subpage-home-link" href="index.html">
+
+    <nav class="mobile-nav">
+
+      <a class="mobile-home-link" href="index.html">
         Brandenburgs dunkle Geheimnisse
       </a>
 
-      <div class="subpage-nav-links">
+      <button
+        class="mobile-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <a class="mobile-start-link" href="index.html">Startseite</a>
         <a href="folgen.html">Folgen</a>
         <a href="about.html">Über den Podcast</a>
         <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
       </div>
+
     </nav>
+
   </header>
 
   <main>
@@ -36,9 +54,10 @@
       <p class="eyebrow">Impressum</p>
       <h1>Angaben gemäß gesetzlicher Anbieterkennzeichnung</h1>
 
+      <!-- HIER kommt dein Impressum-Text hin -->
       <h2>Verantwortlich für Inhalt und Angebot dieser Website</h2>
       <p>
-        Kim Sophie Schäfer<br>
+        Kim [Nachname]<br>
         [ggf. Anschrift oder Impressumsdienst]<br>
         E‑Mail: [deine E‑Mail-Adresse]
       </p>
@@ -47,14 +66,13 @@
       <p>
         Diese Website informiert über den Podcast „Brandenburgs dunkle
         Geheimnisse“ und stellt Möglichkeiten zur Wiedergabe der
-        Podcast‑Folgen (z. B. über eingebettete Player) sowie Links zu
-        externen Plattformen bereit.
+        Podcast‑Folgen sowie Links zu externen Plattformen bereit.
       </p>
 
       <h2>Haftung für Inhalte</h2>
       <p>
-        Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für
-        die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann
+        Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt.
+        Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann
         jedoch keine Gewähr übernommen werden. Inhalte mit Meinungsbezug
         spiegeln persönliche Einschätzungen wider.
       </p>
@@ -65,9 +83,7 @@
         Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten
         Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
         Zum Zeitpunkt der Verlinkung waren keine rechtswidrigen Inhalte
-        erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten
-        ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht
-        zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden derartige
+        erkennbar. Bei Bekanntwerden von Rechtsverletzungen werden derartige
         Links umgehend entfernt.
       </p>
 
@@ -78,7 +94,7 @@
         Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.
         Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
         Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der
-        vorherigen schriftlichen Zustimmung der jeweiligen Rechteinhaber.
+        vorherigen Zustimmung der jeweiligen Rechteinhaber.
       </p>
 
       <p class="back-link">
@@ -94,18 +110,16 @@
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
 
+  <!-- JavaScript für das mobile Menü -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const toggle = document.querySelector(".mobile-toggle");
       const menu = document.querySelector("#mobile-menu");
 
-      if (!toggle || !menu) {
-        return;
-      }
+      if (!toggle || !menu) return;
 
       toggle.addEventListener("click", function () {
         const isOpen = menu.classList.toggle("is-open");
-
         toggle.classList.toggle("is-open", isOpen);
         toggle.setAttribute("aria-expanded", String(isOpen));
         toggle.setAttribute(
@@ -114,7 +128,8 @@
         );
       });
 
-      menu.querySelectorAll("a").forEach(function (link) {
+      const links = menu.querySelectorAll("a");
+      links.forEach(function (link) {
         link.addEventListener("click", function () {
           menu.classList.remove("is-open");
           toggle.classList.remove("is-open");
@@ -125,6 +140,5 @@
     });
   </script>
 
-  
 </body>
 </html>
