@@ -1064,6 +1064,8 @@ footer a:hover {
   line-height: 1;
 }
 
+/* Zweispaltiges Layout: Instagram + Text */
+
 .episode-layout {
   display: flex;
   flex-wrap: wrap;
@@ -1093,17 +1095,16 @@ footer a:hover {
   text-transform: uppercase;
 }
 
-/* Mobile: untereinander statt zweispaltig */
+/* Mobile: untereinander statt nebeneinander */
 
-.episode-detail {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 90px 7% 110px;
-  background: var(--black);
-}
+@media (max-width: 700px) {
+  .episode-detail {
+    width: 100%;
+    padding: 70px 6% 90px;
+  }
 
-.episode-detail h1 {
-  margin: 0 0 28px;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
+  .episode-layout {
+    flex-direction: column;
+    gap: 22px;
+  }
 }
