@@ -1095,14 +1095,15 @@ footer a:hover {
 
 /* Mobile: untereinander statt zweispaltig */
 
-@media (max-width: 700px) {
-  .episode-detail {
-    width: 100%;
-    padding: 70px 6% 90px;
-  }
+.episode-detail {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 90px 7% 110px;
+  background: var(--black);
+}
 
-  .episode-layout {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
+.episode-detail h1 {
+  margin: 0 0 28px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
 }
