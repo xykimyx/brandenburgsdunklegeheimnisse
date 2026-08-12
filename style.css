@@ -1065,18 +1065,19 @@ footer a:hover {
 }
 
 .episode-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 28px;
+  margin-top: 32px;
   margin-bottom: 40px;
 }
 
 .episode-instagram {
-  min-width: 0;
+  flex: 1 1 55%;
 }
 
 .episode-notes {
-  min-width: 0;
+  flex: 1 1 45%;
 }
 
 .episode-notes p {
