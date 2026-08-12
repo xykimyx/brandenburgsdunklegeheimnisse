@@ -1049,3 +1049,59 @@ footer a:hover {
   }
 }
 
+/* Episoden-Unterseite: Layout mit Instagram links, Text rechts */
+
+.episode-detail {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 90px 7% 110px;
+  background: var(--black);
+}
+
+.episode-detail h1 {
+  margin: 0 0 28px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.episode-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.episode-instagram {
+  min-width: 0;
+}
+
+.episode-notes {
+  min-width: 0;
+}
+
+.episode-notes p {
+  color: var(--gray);
+  font-size: 1.02rem;
+}
+
+.episode-meta {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Mobile: untereinander statt zweispaltig */
+
+@media (max-width: 700px) {
+  .episode-detail {
+    width: 100%;
+    padding: 70px 6% 90px;
+  }
+
+  .episode-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
