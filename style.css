@@ -606,10 +606,11 @@ blockquote {
 .episode-card h4 {
   color: var(--gold) !important;
   font-family: Georgia, "Times New Roman", serif !important;
-  font-weight: normal !important;
-  font-size: clamp(2rem, 4vw, 3.8rem) !important;
-  margin-top: 1.75rem !important;
-  margin-bottom: 0.6rem !important;
+  font-weight: 700 !important; /* dicker */
+  font-size: clamp(1.4rem, 3vw, 2rem) !important; /* größer, responsiv wie h2 */
+  line-height: 1.1 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.8rem !important;
 }
 
 /* =====================================================
