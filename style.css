@@ -600,17 +600,17 @@ blockquote {
    ZWISCHENÜBERSCHRIFTEN IN FOLGENTEXTEN (H4) IN BRONZE
    ===================================================== */
 
-.about-page h4,
-.episodes-page h4,
 .episode-detail h4,
+.episodes-page h4,
+.about-page h4,
 .episode-card h4 {
   color: var(--gold);
-  font-weight: 700;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal; /* wie bei deinen anderen Überschriften */
   font-size: 1.1rem;
   margin-top: 1.75rem;
   margin-bottom: 0.6rem;
 }
-
 
 
 /* =====================================================
