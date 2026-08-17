@@ -244,7 +244,7 @@ h3 {
 }
 
 /* Bronze-Zwischenüberschriften für Podcast-Folgentexte */
-  .podcast-content h4 {
+  h4 {
     color: var(--gold);
     font-weight: 700;
     font-size: 1.1rem; /* etwas größer als normaler Text, aber kleiner als h2 */
