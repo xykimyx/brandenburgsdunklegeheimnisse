@@ -243,14 +243,6 @@ h3 {
   font-weight: normal;
 }
 
-/* Bronze-Zwischenüberschriften für Podcast-Folgentexte */
-  h4 {
-    color: var(--gold);
-    font-weight: 700;
-    font-size: 1.1rem; /* etwas größer als normaler Text, aber kleiner als h2 */
-    margin-top: 1.75rem;
-    margin-bottom: 0.6rem;
-  }
 
 .hero-content h1 {
   margin: 0 auto 25px;
@@ -603,6 +595,23 @@ blockquote {
   gap: 24px;
   margin-top: 50px;
 }
+
+/* =====================================================
+   ZWISCHENÜBERSCHRIFTEN IN FOLGENTEXTEN (H4) IN BRONZE
+   ===================================================== */
+
+.about-page h4,
+.episodes-page h4,
+.episode-detail h4,
+.episode-card h4 {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+}
+
+
 
 /* =====================================================
    11. FOOTER
