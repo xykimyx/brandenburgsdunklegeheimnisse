@@ -607,7 +607,7 @@ blockquote {
   color: var(--gold) !important;
   font-family: Georgia, "Times New Roman", serif !important;
   font-weight: normal !important;
-  font-size: 1.1rem !important;
+  font-size: clamp(2rem, 4vw, 3.8rem) !important;
   margin-top: 1.75rem !important;
   margin-bottom: 0.6rem !important;
 }
