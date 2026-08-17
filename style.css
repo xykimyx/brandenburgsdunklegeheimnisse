@@ -597,21 +597,20 @@ blockquote {
 }
 
 /* =====================================================
-   ZWISCHENÜBERSCHRIFTEN IN FOLGENTEXTEN (H4) IN BRONZE
+   H4 ZWISCHENÜBERSCHRIFTEN IN BRONZE / SERIFEN
    ===================================================== */
 
 .episode-detail h4,
 .episodes-page h4,
 .about-page h4,
 .episode-card h4 {
-  color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: normal; /* wie bei deinen anderen Überschriften */
-  font-size: 1.1rem;
-  margin-top: 1.75rem;
-  margin-bottom: 0.6rem;
+  color: var(--gold) !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: normal !important;
+  font-size: 1.1rem !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.6rem !important;
 }
-
 
 /* =====================================================
    11. FOOTER
