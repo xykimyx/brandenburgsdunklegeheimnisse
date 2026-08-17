@@ -243,6 +243,15 @@ h3 {
   font-weight: normal;
 }
 
+/* Bronze-Zwischenüberschriften für Podcast-Folgentexte */
+  .podcast-content h4 {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1.1rem; /* etwas größer als normaler Text, aber kleiner als h2 */
+    margin-top: 1.75rem;
+    margin-bottom: 0.6rem;
+  }
+
 .hero-content h1 {
   margin: 0 auto 25px;
 
