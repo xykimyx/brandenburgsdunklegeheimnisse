@@ -435,6 +435,10 @@ h3 {
 
 .all-episodes-button {
   display: inline-block;
+  align-self: flex-start;
+
+  width: fit-content;
+  max-width: max-content;
 
   margin-top: 35px;
   padding: 14px 22px;
@@ -442,6 +446,7 @@ h3 {
   border: 1px solid var(--gold);
   color: var(--gold);
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .all-episodes-button:hover {
