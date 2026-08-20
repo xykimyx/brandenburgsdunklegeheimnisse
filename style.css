@@ -1126,3 +1126,23 @@ footer a:hover {
     gap: 22px;
   }
 }
+
+
+/* Nur für die Player auf der Startseite */
+
+#neueste-folgen .spotify-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+#neueste-folgen .spotify-grid > div {
+  width: 100%;
+}
+
+#neueste-folgen .spotify-grid iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
