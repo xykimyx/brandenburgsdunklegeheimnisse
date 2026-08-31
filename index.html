@@ -83,26 +83,52 @@
     <section id="neueste-folgen" class="latest-section">
 
 
-  <section class="spotify-grid">
+ ```html
+<section class="spotify-grid">
 
-        <div class="episode-teufelssee">
-   <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/34nZBnLAwnBIxB8N3aU7g2?utm_source=generator&theme=0&si=273860ff80394dce" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <div class="spotify-lazy" data-spotify-id="34nZBnLAwnBIxB8N3aU7g2">
+    <div class="spotify-placeholder">
+      <div class="spotify-placeholder-content">
+        <strong>#03 Der Teufelssee</strong>
+        <span>Auf Spotify anhören</span>
+        <button type="button">▶ Player laden</button>
+      </div>
+    </div>
   </div>
 
-    <div class="episode-hoawief">
-    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/7zQB3D7PBd0P2ozx8K6lto?utm_source=generator&theme=0&si=46fd2d9e8097467f" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <div class="spotify-lazy" data-spotify-id="7zQB3D7PBd0P2ozx8K6lto">
+    <div class="spotify-placeholder">
+      <div class="spotify-placeholder-content">
+        <strong>#02 Das Hoawief</strong>
+        <span>Auf Spotify anhören</span>
+        <button type="button">▶ Player laden</button>
+      </div>
+    </div>
   </div>
 
-  <div class="episode-zelsow">
-  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/1PbDOslPTc0VE5yj3jgAGp?utm_source=generator&theme=0&si=1c5a491a6a8845f9" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <div class="spotify-lazy" data-spotify-id="1PbDOslPTc0VE5yj3jgAGp">
+    <div class="spotify-placeholder">
+      <div class="spotify-placeholder-content">
+        <strong>#01 Die Glocken von Zelsow</strong>
+        <span>Auf Spotify anhören</span>
+        <button type="button">▶ Player laden</button>
+      </div>
+    </div>
   </div>
 
-  <div class="Trailer">
- <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/1qMLU7kUdxFEFhiHIcK9Y4?utm_source=generator&theme=0&si=d3e3499df817431a" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <div class="spotify-lazy" data-spotify-id="1qMLU7kUdxFEFhiHIcK9Y4">
+    <div class="spotify-placeholder">
+      <div class="spotify-placeholder-content">
+        <strong>Trailer</strong>
+        <span>Auf Spotify anhören</span>
+        <button type="button">▶ Player laden</button>
+      </div>
+    </div>
   </div>
-   
 
-  </div>
+</section>
+```
+
 
   <a class="all-episodes-button" href="folgen.html">
     Alle Folgen ansehen →
@@ -125,38 +151,120 @@
     </a>
   </footer>
 
+
+  ```html
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    /* ==========================================
+       MOBILE MENÜ
+       ========================================== */
+
+    const toggle = document.querySelector(".mobile-toggle");
+    const menu = document.querySelector("#mobile-menu");
+
+    if (toggle && menu) {
+
+      toggle.addEventListener("click", function () {
+        const isOpen = menu.classList.toggle("is-open");
+
+        toggle.classList.toggle("is-open", isOpen);
+
+        toggle.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+
+        toggle.setAttribute(
+          "aria-label",
+          isOpen ? "Menü schließen" : "Menü öffnen"
+        );
+      });
+
+      menu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+
+          menu.classList.remove("is-open");
+          toggle.classList.remove("is-open");
+
+          toggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          toggle.setAttribute(
+            "aria-label",
+            "Menü öffnen"
+          );
+        });
+      });
+    }
+
+
+    /* ==========================================
+       SPOTIFY LAZY LOADING
+       ========================================== */
+
+    const spotifyPlayers =
+      document.querySelectorAll(".spotify-lazy");
+
+    spotifyPlayers.forEach(function (container) {
+
+      const button =
+        container.querySelector("button");
+
+      if (!button) {
+        return;
+      }
+
+      button.addEventListener("click", function () {
+
+        const spotifyId =
+          container.getAttribute("data-spotify-id");
+
+        if (!spotifyId) {
+          return;
+        }
+
+        const iframe =
+          document.createElement("iframe");
+
+        iframe.src =
+          "https://open.spotify.com/embed/episode/" +
+          spotifyId +
+          "?utm_source=generator&theme=0";
+
+        iframe.width = "100%";
+        iframe.height = "352";
+        iframe.frameBorder = "0";
+
+        iframe.allowFullscreen = true;
+
+        iframe.setAttribute(
+          "allow",
+          "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        );
+
+        iframe.setAttribute(
+          "loading",
+          "lazy"
+        );
+
+        iframe.style.borderRadius = "12px";
+
+        container.innerHTML = "";
+
+        container.appendChild(iframe);
+      });
+
+    });
+
+  });
+</script>
+```
+
 </body>
 </html>
 
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".mobile-toggle");
-    const menu = document.querySelector("#mobile-menu");
-
-    if (!toggle || !menu) {
-      return;
-    }
-
-    toggle.addEventListener("click", function () {
-      const isOpen = menu.classList.toggle("is-open");
-
-      toggle.classList.toggle("is-open", isOpen);
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      toggle.setAttribute(
-        "aria-label",
-        isOpen ? "Menü schließen" : "Menü öffnen"
-      );
-    });
-
-    menu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        menu.classList.remove("is-open");
-        toggle.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Menü öffnen");
-      });
-    });
-  });
-</script>
