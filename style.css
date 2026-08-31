@@ -1,7 +1,7 @@
-```css
 /* =====================================================
    BRANDENBURGS DUNKLE GEHEIMNISSE
    Komplette Website-CSS
+   Performance-optimierte Version
    ===================================================== */
 
 
@@ -46,6 +46,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 button {
@@ -69,15 +70,7 @@ button {
 
 /* =====================================================
    3. NAVIGATION
-   Desktop:
-   Titel links, Links rechts
-
-   Smartphone:
-   Titel ausgeblendet, Hamburger rechts
    ===================================================== */
-
-
-/* Desktop-Navigation */
 
 .mobile-nav {
   position: absolute;
@@ -180,27 +173,40 @@ button {
    ===================================================== */
 
 @media (min-width: 701px) {
+
   .full-width-logo {
+    position: relative;
+
     width: 100vw;
     height: auto;
     min-height: 0;
+
     margin-left: calc(50% - 50vw);
+
     overflow: hidden;
     background: #000000;
   }
 
   .full-width-logo img {
     display: block;
+
     width: 100%;
     height: auto;
     max-width: none;
 
     object-fit: contain;
     object-position: center center;
+
     background: #000000;
   }
 
   .full-width-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.12) 0%,
@@ -274,6 +280,7 @@ h3 {
   color: var(--gold);
 
   font-weight: bold;
+
   transition:
     background 0.2s ease,
     color 0.2s ease;
@@ -394,9 +401,7 @@ h3 {
 }
 
 
-/* =====================================================
-   7A. SPOTIFY-PLAYER
-   ===================================================== */
+/* Spotify-Player */
 
 .spotify-player,
 .player {
@@ -447,6 +452,7 @@ h3 {
 
   border: 1px solid var(--gold);
   color: var(--gold);
+
   font-weight: bold;
   white-space: nowrap;
 }
@@ -454,117 +460,6 @@ h3 {
 .all-episodes-button:hover {
   background: var(--gold);
   color: var(--black);
-}
-
-
-/* =====================================================
-   7B. SPOTIFY CLICK-TO-LOAD
-   ===================================================== */
-
-.spotify-placeholder {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 352px;
-  min-height: 352px;
-
-  padding: 30px;
-
-  background: var(--dark);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-
-  cursor: pointer;
-
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease;
-}
-
-.spotify-placeholder:hover {
-  background: #202020;
-  border-color: var(--gold);
-}
-
-.spotify-placeholder:focus {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-}
-
-.spotify-placeholder-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  width: 100%;
-  max-width: 420px;
-
-  text-align: center;
-}
-
-.spotify-placeholder-content strong {
-  margin-bottom: 10px;
-
-  color: var(--light);
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
-  font-weight: normal;
-  line-height: 1.15;
-}
-
-.spotify-placeholder-content span {
-  margin-bottom: 24px;
-
-  color: var(--gray);
-
-  font-size: 0.95rem;
-}
-
-.spotify-placeholder-content button {
-  display: inline-block;
-
-  padding: 13px 22px;
-
-  border: 1px solid var(--gold);
-  background: var(--gold);
-  color: var(--black);
-
-  font-size: 0.9rem;
-  font-weight: bold;
-
-  border-radius: 0;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.spotify-placeholder:hover
-.spotify-placeholder-content button {
-  background: transparent;
-  color: var(--gold);
-}
-
-
-/* Spotify-Iframe nach dem Laden */
-
-.spotify-placeholder iframe {
-  display: block;
-
-  width: 100%;
-  height: 352px;
-  min-height: 352px;
-
-  border: 0;
-  border-radius: 12px;
 }
 
 
@@ -707,16 +602,9 @@ blockquote {
   max-width: 760px;
 }
 
-.episode-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 50px;
-}
-
 
 /* =====================================================
-   H4 ZWISCHENÜBERSCHRIFTEN IN BRONZE / SERIFEN
+   11. H4 ZWISCHENÜBERSCHRIFTEN
    ===================================================== */
 
 .episode-detail h4,
@@ -728,13 +616,14 @@ blockquote {
   font-weight: 500 !important;
   font-size: clamp(1.4rem, 3vw, 2rem) !important;
   line-height: 1.1 !important;
+
   margin-top: 2rem !important;
   margin-bottom: 0.8rem !important;
 }
 
 
 /* =====================================================
-   11. FOOTER
+   12. FOOTER
    ===================================================== */
 
 footer {
@@ -762,7 +651,7 @@ footer a:hover {
 
 
 /* =====================================================
-   12. TABLET
+   13. TABLET
    ===================================================== */
 
 @media (max-width: 900px) and (min-width: 701px) {
@@ -779,12 +668,11 @@ footer a:hover {
   .nav-right {
     gap: 20px;
   }
-
 }
 
 
 /* =====================================================
-   13. SMARTPHONE
+   14. SMARTPHONE
    ===================================================== */
 
 @media (max-width: 700px) {
@@ -794,7 +682,9 @@ footer a:hover {
     width: 100%;
     min-height: 100%;
     margin: 0;
+
     background: #000000;
+
     overflow-x: hidden;
   }
 
@@ -808,11 +698,12 @@ footer a:hover {
   }
 
 
-  /* Hero kompakt halten */
+  /* Hero */
 
   .hero {
     min-height: 0;
     height: auto;
+
     padding: 0 0 40px;
   }
 
@@ -827,9 +718,11 @@ footer a:hover {
     z-index: 100;
 
     display: block;
+
     width: 100%;
     height: 76px;
     min-height: 76px;
+
     padding: 0;
 
     background: rgba(0, 0, 0, 0.45);
@@ -850,15 +743,19 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     gap: 7px;
 
     width: 44px;
     height: 44px;
+
     padding: 8px;
 
     border: 1px solid var(--light);
     border-radius: 4px;
+
     background: rgba(0, 0, 0, 0.7);
+
     cursor: pointer;
   }
 
@@ -869,6 +766,7 @@ footer a:hover {
     height: 2px;
 
     background: var(--light);
+
     transition: transform 0.2s ease;
   }
 
@@ -881,7 +779,7 @@ footer a:hover {
   }
 
 
-  /* Mobile-Menü geschlossen */
+  /* Mobile-Menü */
 
   .nav-right {
     position: absolute;
@@ -891,22 +789,23 @@ footer a:hover {
     z-index: 101;
 
     display: none;
+
     flex-direction: column;
     align-items: stretch;
+
     gap: 0;
 
     width: 100%;
     height: auto;
+
     margin: 0;
     padding: 8px 6% 14px;
 
     background: #000000;
+
     border-top: 1px solid rgba(201, 166, 107, 0.45);
     border-bottom: 1px solid var(--border);
   }
-
-
-  /* Mobile-Menü geöffnet */
 
   .nav-right.is-open {
     display: flex;
@@ -917,12 +816,15 @@ footer a:hover {
 
     width: 100%;
     min-height: 44px;
+
     padding: 13px 0;
 
     border-bottom: 1px solid rgba(243, 238, 229, 0.15);
+
     color: var(--light);
 
     font-size: 0.95rem;
+
     text-shadow: none;
   }
 
@@ -938,11 +840,16 @@ footer a:hover {
   /* Mobile Banner */
 
   .full-width-logo {
+    position: relative;
+
     width: 100vw;
     height: 330px;
+
     margin: 0;
 
     background: #000000;
+
+    overflow: hidden;
   }
 
   .full-width-logo img {
@@ -951,10 +858,17 @@ footer a:hover {
 
     object-fit: cover;
     object-position: center center;
+
     background: #000000;
   }
 
   .full-width-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.08) 0%,
@@ -964,12 +878,14 @@ footer a:hover {
   }
 
 
-  /* Text direkt unter dem Bild */
+  /* Text unter dem Bild */
 
   .hero-content {
     width: 100%;
     max-width: 100%;
+
     margin: 0;
+
     padding: 26px 6% 0;
 
     background: #000000;
@@ -987,7 +903,7 @@ footer a:hover {
   }
 
 
-  /* Folgen als eine Spalte */
+  /* Folgen */
 
   .episode-grid {
     grid-template-columns: 1fr;
@@ -997,7 +913,9 @@ footer a:hover {
   .latest-section {
     width: 100%;
     max-width: 100%;
+
     margin: 0;
+
     padding: 60px 6% 80px;
   }
 
@@ -1016,6 +934,7 @@ footer a:hover {
   .about-page,
   .episodes-page {
     width: 100%;
+
     padding: 70px 6% 85px;
   }
 
@@ -1049,51 +968,11 @@ footer a:hover {
   footer {
     padding: 30px 6%;
   }
-
-
-  /* Spotify Click-to-Load auf Smartphones */
-
-  .spotify-placeholder {
-    height: 352px;
-    min-height: 352px;
-    padding: 24px;
-  }
-
-  .spotify-placeholder-content strong {
-    font-size: 1.7rem;
-  }
-
-  .spotify-placeholder-content span {
-    font-size: 0.9rem;
-  }
-
 }
 
 
 /* =====================================================
-   ZUSÄTZLICHE RESPONSIVE-REGELN
-   ===================================================== */
-
-@media (max-width: 900px) and (min-width: 701px) {
-
-  .episode-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-}
-
-@media (max-width: 700px) {
-
-  .episode-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-}
-
-
-/* =====================================================
-   14. KLEINE SMARTPHONES
+   15. KLEINE SMARTPHONES
    ===================================================== */
 
 @media (max-width: 380px) {
@@ -1109,13 +988,11 @@ footer a:hover {
   .nav-right a {
     font-size: 0.9rem;
   }
-
 }
 
 
 /* =====================================================
-   FOLGENKARTEN:
-   Rahmen behalten, zusätzliche Trenner entfernen
+   16. FOLGENKARTEN
    ===================================================== */
 
 .episodes-grid .full-episode,
@@ -1126,13 +1003,11 @@ footer a:hover {
 
   border: 1px solid #383838 !important;
   border-top: 1px solid #383838 !important;
+
   border-radius: 8px !important;
 
   background: #181818 !important;
 }
-
-
-/* Kupferfarbene Zusatzlinie entfernen */
 
 .episodes-grid .full-episode::before,
 .episodes-list .full-episode::before,
@@ -1142,9 +1017,6 @@ footer a:hover {
   content: none !important;
 }
 
-
-/* Ruhiger Abstand zwischen den Karten */
-
 .episodes-grid {
   row-gap: 26px !important;
   column-gap: 26px !important;
@@ -1152,12 +1024,7 @@ footer a:hover {
 
 
 /* =====================================================
-   ABSTAND ZWISCHEN DEN FOLGENKARTEN
-   ===================================================== */
-
-
-/* =====================================================
-   FOLGEN-SEITE AUF DESKTOP BREITER MACHEN
+   17. FOLGEN-SEITE DESKTOP
    ===================================================== */
 
 @media (min-width: 1200px) {
@@ -1165,20 +1032,27 @@ footer a:hover {
   .episodes-page {
     width: calc(100% - 80px) !important;
     max-width: 1440px !important;
+
     margin: 0 auto !important;
+
     padding: 90px 0 120px !important;
   }
 
   .episodes-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr)) !important;
+
     gap: 32px !important;
+
     width: 100% !important;
   }
 
   .episodes-grid .full-episode {
     width: 100% !important;
     min-width: 0 !important;
+
     padding: 30px !important;
   }
 
@@ -1190,12 +1064,11 @@ footer a:hover {
   .episodes-grid .podcast-player {
     width: 100% !important;
   }
-
 }
 
 
 /* =====================================================
-   MITTLERE DESKTOP- UND TABLET-BREITE
+   18. MITTLERE DESKTOP- UND TABLET-BREITE
    ===================================================== */
 
 @media (min-width: 701px) and (max-width: 1199px) {
@@ -1203,28 +1076,34 @@ footer a:hover {
   .episodes-page {
     width: calc(100% - 60px) !important;
     max-width: 1100px !important;
+
     margin: 0 auto !important;
+
     padding: 80px 0 100px !important;
   }
 
   .episodes-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
     gap: 26px !important;
+
     width: 100% !important;
   }
 
   .episodes-grid .full-episode {
     width: 100% !important;
     min-width: 0 !important;
+
     padding: 26px !important;
   }
-
 }
 
 
 /* =====================================================
-   SMARTPHONE BLEIBT EINSPALTIG
+   19. SMARTPHONE FOLGEN-SEITE
    ===================================================== */
 
 @media (max-width: 700px) {
@@ -1232,33 +1111,41 @@ footer a:hover {
   .episodes-page {
     width: 100% !important;
     max-width: 100% !important;
+
     margin: 0 !important;
+
     padding: 70px 6% 90px !important;
   }
 
   .episodes-grid {
     display: grid !important;
+
     grid-template-columns: 1fr !important;
+
     gap: 18px !important;
+
     width: 100% !important;
   }
 
   .episodes-grid .full-episode {
     width: 100% !important;
+
     padding: 22px !important;
   }
-
 }
 
 
 /* =====================================================
-   EPISODEN-UNTERSEITE
+   20. EPISODEN-UNTERSEITE
    ===================================================== */
 
 .episode-detail {
   max-width: 960px;
+
   margin: 0 auto;
+
   padding: 90px 7% 110px;
+
   background: var(--black);
 }
 
@@ -1266,17 +1153,20 @@ footer a:hover {
   margin: 0 0 28px;
 
   font-size: clamp(2.5rem, 6vw, 5rem);
+
   line-height: 1;
 }
 
 
-/* Zweispaltiges Layout:
-   Instagram + Text */
+/* Zweispaltiges Layout */
 
 .episode-layout {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 28px;
+
   margin-top: 32px;
   margin-bottom: 40px;
 }
@@ -1291,44 +1181,40 @@ footer a:hover {
 
 .episode-notes p {
   color: var(--gray);
+
   font-size: 1.02rem;
 }
 
-.episode-meta {
-  margin: 0 0 12px;
 
-  color: var(--gold);
-  font-size: 0.78rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-
-/* Mobile: untereinander statt nebeneinander */
+/* Mobile */
 
 @media (max-width: 700px) {
 
   .episode-detail {
     width: 100%;
+
     padding: 70px 6% 90px;
   }
 
   .episode-layout {
     flex-direction: column;
+
     gap: 22px;
   }
-
 }
 
 
 /* =====================================================
-   NUR FÜR DIE PLAYER AUF DER STARTSEITE
+   21. SPOTIFY-GRID AUF DER STARTSEITE
    ===================================================== */
 
 #neueste-folgen .spotify-grid {
   display: flex;
+
   flex-direction: column;
+
   gap: 24px;
+
   width: 100%;
 }
 
@@ -1338,22 +1224,12 @@ footer a:hover {
 
 #neueste-folgen .spotify-grid iframe {
   display: block;
+
   width: 100%;
   max-width: 100%;
 }
 
 
 /* =====================================================
-   SPOTIFY PLACEHOLDER AUF DER STARTSEITE
+   ENDE
    ===================================================== */
-
-#neueste-folgen .spotify-grid .spotify-placeholder {
-  width: 100%;
-  max-width: 100%;
-}
-
-#neueste-folgen .spotify-grid .spotify-placeholder iframe {
-  width: 100%;
-  max-width: 100%;
-}
-```
