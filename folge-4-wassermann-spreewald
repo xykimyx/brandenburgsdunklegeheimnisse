@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Folge 4 | Der Wassermann im Spreewald</title>
+
+  <meta
+    name="description"
+    content="Was lebt unter der dunklen Wasseroberfläche des Spreewaldes?"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="subpage-header">
+  <nav class="mobile-nav">
+
+  <a class="mobile-home-link" href="index.html">
+    Brandenburgs dunkle Geheimnisse
+  </a>
+
+  <button
+    class="mobile-toggle"
+    type="button"
+    aria-label="Menü öffnen"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-right" id="mobile-menu">
+    <a class="mobile-start-link" href="index.html">
+      Startseite
+    </a>
+
+    <a href="folgen.html">Folgen</a>
+    <a href="about.html">Über den Podcast</a>
+    <a
+      href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
+      target="_blank"
+      rel="noopener"
+    >
+      Instagram
+    </a>
+  </div>
+
+</nav>
+  </header>
+
+  <main>
+    <section class="episode-detail">
+    
+      <p class="eyebrow">Folge 3</p>
+      <h1>Der Teufelssee</h1>
+
+      <div class="episode-layout">
+
+        <div class="episode-notes">
+          <p class="episode-meta">Ort: Spreewald · Genre: Sage / Mystery</p>
+
+
+               <h4>Was lebt unter der dunklen Wasseroberfläche des Spreewaldes?</h4>
+
+
+          
+           <p>
+ Der Spreewald ist bekannt für seine verzweigten Fließe, dichten Wälder und kleinen Dörfer. Doch in der alten Sagenwelt der Region ist das Wasser nicht nur wunderschön, sondern auch geheimnisvoll und manchmal gefährlich.
+  </p>
+
+  <p>
+  Eine der bekanntesten Gestalten ist der Wassermann vom Spreewald. Der Sage nach lebt er in den Fließen und kann sich unter die Menschen mischen. Er soll Handel treiben und sogar eine Familie haben. Besonders unheimlich wird es bei seinen Töchtern: Sie erscheinen als junge Frauen, tanzen mit den Menschen und sollen manchen von ihnen zurück ins Wasser locken.
+Doch worum geht es bei dieser Sage eigentlich?
+  </p>
+
+
+  <h4>Die Sage vom Wassermann</h4>
+    
+   
+      <p>In dieser Folge von „Brandenburgs dunkle Geheimnisse“ nehme ich dich mit in die Spreewälder Sagenwelt und schaue mir den Wassermann genauer an. Woher kommt die Vorstellung von einem Wesen, das unter der Wasseroberfläche lebt? Warum spielt das Wasser im Spreewald eine so große Rolle? Und könnte die Sage vielleicht auch eine ganz reale Gefahr erklären?
+Denn für die Menschen, die früher im Spreewald lebten, waren die Fließe nicht nur Verkehrswege und Lebensgrundlage. Dunkle Gewässer, Nebel, unbekannte Tiefen und die Orientierung in einem weit verzweigten Netz aus Wasserläufen konnten durchaus gefährlich werden.</p>
+
+          <p>
+     Vielleicht brauchte diese Gefahr deshalb irgendwann ein Gesicht.<br>
+Einen Wassermann. <br>
+Eine Familie. <br>
+Und eine geheimnisvolle Welt unter der Wasseroberfläche.</p>
+
+<p>In der Folge geht es außerdem um den Schlangenkönig, die gekrönten Schlangenköpfe an alten Spreewaldhäusern und die Sage, nach der sogar der Teufel selbst die besondere Landschaft des Spreewaldes erschaffen haben soll.</p>
+
+         
+          <h4>Sage oder Wahrheit?</h4>
+
+          <p>
+            Komm mit in den Spreewald und entdecke eine Landschaft, in der Wasser, Geschichte und Mythos bis heute eng miteinander verbunden sind. </p>
+
+    
+           <!-- Spotify-Player unter der Zweispaltigkeit -->
+      <div class="spotify-player">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/34nZBnLAwnBIxB8N3aU7g2?utm_source=generator&theme=0&si=4d13eaa8ea0c402f" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+  <p>
+  <section class="quellen">
+  <h2>Quellen</h2>
+
+  <ul>
+  <li>Stadt Lübben (Spreewald):<a href="https://www.luebben.de/stadt-luebben/de/stadtportraet/sorben-wenden/muell-ist-keine-sage/sagen/der-wassermann/?utm_source=chatgpt.com" target="_blank" rel="noopener">Der Wassermann</a></li>
+  <li>Spreewald.de: <a href="https://www.spreewald.de/kultur-lifestyle/traditionen/sagenfiguren?utm_source=chatgpt.com" target="_blank" rel="noopener">Sagenfiguren im Spreewald</a></li>
+  <li>Raddusch-Spreewald.de: <a href="https://www.raddusch-spreewald.de/ort/geschichte/sagen/wassermann.php?utm_source=chatgpt.com" target="_blank" rel="noopener">Der Wassermann und seine Töchter</a></li>
+  <li>Landkreis Dahme-Spreewald: <a href="https://www.dahme-spreewald.de/de/landkreis/sorben-wenden/tradition-und-kultur/?utm_source=chatgpt.com" target="_blank" rel="noopener">Tradition und Kultur</a></li>
+</ul>
+
+  <p>
+    Die Geschichte wird als Sage und Überlieferung erzählt. 
+    Die geschilderten Ereignisse und die Existenz des versunkenen Götzenbildes sind nicht historisch belegt. 
+    Die Geschichte wurde für den Podcast sprachlich bearbeitet und in eigenen Worten nacherzählt.
+  </p>
+
+
+</section>
+
+        </div>
+      </div>
+
+    
+
+      <p class="back-link">
+        <a href="folgen.html">← Zurück zu allen Folgen</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Brandenburgs dunkle Geheimnisse</p>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".mobile-toggle");
+    const menu = document.querySelector("#mobile-menu");
+
+    if (!toggle || !menu) {
+      return;
+    }
+
+    toggle.addEventListener("click", function () {
+      const isOpen = menu.classList.toggle("is-open");
+
+      toggle.classList.toggle("is-open", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute(
+        "aria-label",
+        isOpen ? "Menü schließen" : "Menü öffnen"
+      );
+    });
+
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        menu.classList.remove("is-open");
+        toggle.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+      });
+    });
+  });
+</script>
