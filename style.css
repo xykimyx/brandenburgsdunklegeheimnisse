@@ -1383,7 +1383,7 @@ footer a:hover {
 }
 
 .mystery-map-intro h2 {
-  margin: 0 0 24px;
+  margin: 0 0 22px;
   color: var(--light);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.3rem, 5vw, 4.5rem);
@@ -1395,8 +1395,8 @@ footer a:hover {
   max-width: 650px;
   margin: 0 auto;
   color: var(--gray);
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .mystery-map-wrapper {
@@ -1677,4 +1677,27 @@ footer a:hover {
 #mystery-map .leaflet-control-zoom a:hover {
   background: #222222 !important;
   color: #f3eee5 !important;
+}
+
+
+.mystery-map-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 180px;
+  margin: 0 auto 24px;
+}
+
+.mystery-map-divider span {
+  flex: 1;
+  height: 1px;
+  background: rgba(201, 166, 107, .35);
+}
+
+.mystery-map-divider b {
+  color: var(--gold);
+  font-size: .8rem;
+  font-weight: normal;
+  line-height: 1;
 }
