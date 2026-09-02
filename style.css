@@ -1204,11 +1204,10 @@ column-gap: 26px !important;
 width: calc(100% - 80px) !important;
 max-width: 1440px !important;
 
-```
 margin: 0 auto !important;
 
 padding: 90px 0 120px !important;
-```
+
 
 }
 
@@ -1738,7 +1737,6 @@ padding: 0 6%;
 
 
 }
-
 .about-page,
 .episodes-page {
 width: 100%;
@@ -1911,19 +1909,6 @@ font-size: 0.9rem;
   line-height: 1.65;
 }
 
-
-/* ------------------------------------------
-   DEZENTE TRENNLINIE
-   ------------------------------------------ */
-
-.spotify-feature-header::after {
-  content: "◇";
-  display: block;
-  margin: 24px auto 0;
-  color: var(--gold);
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
 
 
 /* ------------------------------------------
