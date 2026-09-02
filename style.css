@@ -1360,9 +1360,9 @@ footer a:hover {
 }
 
 
-/* =====================================================
-   INTERAKTIVE MYSTERY-KARTE
-   ===================================================== */
+/* ==========================================
+   MYSTERY-KARTE
+   ========================================== */
 
 .mystery-map-section {
   width: 100%;
@@ -1399,161 +1399,110 @@ footer a:hover {
   line-height: 1.6;
 }
 
-
-/* Kartencontainer */
-
 .mystery-map-wrapper {
   position: relative;
   width: 100%;
   height: 620px;
   overflow: hidden;
-
   border: 1px solid var(--border);
   border-radius: 10px;
-
-  background: #111111;
-
-  box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.35);
+  background: #111;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .35);
 }
 
 #mystery-map {
   width: 100%;
   height: 100%;
-  background: #111111;
+  background: #111;
 }
-
-
-/* Hinweis unten links */
 
 .map-hint {
   position: absolute;
   left: 22px;
   bottom: 22px;
   z-index: 500;
-
   display: flex;
   align-items: center;
   gap: 9px;
-
   padding: 9px 13px;
-
-  background: rgba(0, 0, 0, 0.82);
-
-  border: 1px solid rgba(201, 166, 107, 0.35);
+  background: rgba(0, 0, 0, .82);
+  border: 1px solid rgba(201, 166, 107, .35);
   border-radius: 4px;
-
   color: var(--gray);
-
-  font-size: 0.75rem;
-  letter-spacing: 0.5px;
-
+  font-size: .75rem;
+  letter-spacing: .5px;
   backdrop-filter: blur(8px);
 }
 
 .map-hint-dot {
   display: block;
-
   width: 7px;
   height: 7px;
-
   border-radius: 50%;
-
   background: var(--gold);
-
-  box-shadow:
-    0 0 8px rgba(201, 166, 107, 0.9);
+  box-shadow: 0 0 8px rgba(201, 166, 107, .9);
 }
-
-
-/* =====================================================
-   GOLDENE MARKER
-   ===================================================== */
 
 .mystery-marker {
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: transparent;
   border: 0;
 }
 
 .mystery-marker::before {
   content: "";
-
   position: absolute;
-
   width: 24px;
   height: 24px;
-
-  border: 1px solid rgba(201, 166, 107, 0.35);
+  border: 1px solid rgba(201, 166, 107, .35);
   border-radius: 50%;
-
   animation: mysteryPulse 2.5s infinite;
 }
 
 .mystery-marker span {
   position: relative;
   z-index: 2;
-
   display: block;
-
   width: 9px;
   height: 9px;
-
   border-radius: 50%;
-
   background: var(--gold);
-
   box-shadow:
-    0 0 5px rgba(201, 166, 107, 0.8),
-    0 0 14px rgba(201, 166, 107, 0.5);
+    0 0 5px rgba(201, 166, 107, .8),
+    0 0 14px rgba(201, 166, 107, .5);
 }
 
 @keyframes mysteryPulse {
-
   0% {
-    transform: scale(0.75);
-    opacity: 0.8;
+    transform: scale(.75);
+    opacity: .8;
   }
 
   50% {
     transform: scale(1.25);
-    opacity: 0.25;
+    opacity: .25;
   }
 
   100% {
-    transform: scale(0.75);
-    opacity: 0.8;
+    transform: scale(.75);
+    opacity: .8;
   }
-
 }
-
-
-/* =====================================================
-   LEAFLET POPUPS
-   ===================================================== */
 
 .leaflet-popup-content-wrapper {
   padding: 0;
-
   background: #181818;
-
   border: 1px solid #383838;
   border-radius: 7px;
-
   color: var(--light);
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .5);
 }
 
 .leaflet-popup-content {
   width: 280px !important;
-
   margin: 0;
   padding: 22px;
 }
@@ -1570,76 +1519,45 @@ footer a:hover {
   color: var(--gold) !important;
 }
 
-
-/* Popup Kategorie */
-
 .mystery-popup-category {
   margin-bottom: 7px;
-
   color: var(--gold);
-
-  font-size: 0.68rem;
+  font-size: .68rem;
   font-weight: bold;
-
   letter-spacing: 1.8px;
   text-transform: uppercase;
 }
 
-
-/* Popup Titel */
-
 .mystery-popup h3 {
   margin: 0 0 7px;
-
   color: var(--light);
-
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.55rem;
   font-weight: normal;
   line-height: 1.1;
 }
 
-
-/* Popup Ort */
-
 .mystery-popup-location {
   margin-bottom: 14px;
-
   color: var(--gold);
-
-  font-size: 0.78rem;
+  font-size: .78rem;
 }
-
-
-/* Popup Beschreibung */
 
 .mystery-popup p {
   margin: 0 0 18px;
-
   color: var(--gray);
-
-  font-size: 0.88rem;
+  font-size: .88rem;
   line-height: 1.5;
 }
 
-
-/* Popup Link */
-
 .mystery-popup-link {
   display: inline-block;
-
   padding: 9px 13px;
-
   border: 1px solid var(--gold);
-
   color: var(--gold);
-
-  font-size: 0.78rem;
+  font-size: .78rem;
   font-weight: bold;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  transition: background .2s ease, color .2s ease;
 }
 
 .mystery-popup-link:hover {
@@ -1647,22 +1565,15 @@ footer a:hover {
   color: var(--black);
 }
 
-
-/* =====================================================
-   LEAFLET ZOOM
-   ===================================================== */
-
 .leaflet-control-zoom {
   margin-right: 18px !important;
   margin-bottom: 18px !important;
-
   border: 1px solid #383838 !important;
 }
 
 .leaflet-control-zoom a {
   background: #181818 !important;
   color: var(--gold) !important;
-
   border-bottom: 1px solid #383838 !important;
 }
 
@@ -1671,13 +1582,8 @@ footer a:hover {
 }
 
 .leaflet-control-zoom a:hover {
-  background: #222222 !important;
+  background: #222 !important;
 }
-
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
 
 @media (max-width: 700px) {
 
@@ -1694,7 +1600,7 @@ footer a:hover {
   }
 
   .mystery-map-intro > p:last-child {
-    font-size: 0.95rem;
+    font-size: .95rem;
   }
 
   .mystery-map-wrapper {
@@ -1705,8 +1611,7 @@ footer a:hover {
   .map-hint {
     left: 14px;
     bottom: 14px;
-
-    font-size: 0.68rem;
+    font-size: .68rem;
   }
 
   .leaflet-popup-content {
