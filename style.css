@@ -1357,11 +1357,10 @@ background: #000000;
 .hero {
 min-height: 0;
 
-```
 height: auto;
 
 padding: 0 0 35px;
-```
+
 
 }
 
@@ -1484,7 +1483,6 @@ border-top:
 
 border-bottom:
   1px solid var(--border);
-```
 
 }
 
@@ -1527,11 +1525,10 @@ display: block;
 width: 100vw;
 height: 330px;
 
-```
 margin: 0;
 
 background: #000000;
-```
+
 
 }
 
