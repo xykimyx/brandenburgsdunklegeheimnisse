@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-
 <html lang="de">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Brandenburgs dunkle Geheimnisse | Mystery- und True-Crime-Podcast</title>
+
   <link rel="icon" type="image/png" href="favicon.png">
 
-<meta
-name="description"
-content="Brandenburgs dunkle Geheimnisse ist ein Podcast über Sagen, historische Kriminalfälle und rätselhafte Orte in Brandenburg."
+  <meta
+    name="description"
+    content="Brandenburgs dunkle Geheimnisse ist ein Mystery-Podcast über Sagen, historische Kriminalfälle und rätselhafte Orte in Brandenburg."
+  >
 
->
-
-<meta
-name="keywords"
-content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen Brandenburg, Kriminalfälle Brandenburg, geheimnisvolle Orte Brandenburg"
-
->
+  <meta
+    name="keywords"
+    content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen Brandenburg, Kriminalfälle Brandenburg, geheimnisvolle Orte Brandenburg"
+  >
 
   <link rel="stylesheet" href="style.css">
 
   <!-- Leaflet -->
-
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   >
+
 </head>
+
 
 <body>
 
+
+<!-- ==========================================
+     HERO
+     ========================================== -->
+
 <header class="hero">
+
 
   <!-- ==========================================
        MOBILE NAVIGATION
@@ -40,59 +47,63 @@ content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen
 
   <nav class="mobile-nav">
 
-
-<a
-  class="mobile-home-link"
-  href="index.html"
->
-  Brandenburgs dunkle Geheimnisse
-</a>
-
-
-<button
-  class="mobile-toggle"
-  type="button"
-  aria-label="Menü öffnen"
-  aria-expanded="false"
-  aria-controls="mobile-menu"
->
-  <span></span>
-  <span></span>
-</button>
+    <a
+      class="mobile-home-link"
+      href="index.html"
+    >
+      Brandenburgs dunkle Geheimnisse
+    </a>
 
 
-<div
-  class="nav-right"
-  id="mobile-menu"
->
+    <button
+      class="mobile-toggle"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span></span>
+      <span></span>
+    </button>
 
-  <a
-    class="mobile-start-link"
-    href="index.html"
-  >
-    Startseite
-  </a>
 
-  <a href="folgen.html">
-    Folgen
-  </a>
+    <div
+      class="nav-right"
+      id="mobile-menu"
+    >
 
-  <a href="about.html">
-    Über den Podcast
-  </a>
+      <a
+        class="mobile-start-link"
+        href="index.html"
+      >
+        Startseite
+      </a>
 
-  <a
-    href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
-    target="_blank"
-    rel="noopener"
-  >
-    Instagram
-  </a>
+      <a href="folgen.html">
+        Folgen
+      </a>
 
-</div>
+      <a href="geheimnisvolle-orte.html">
+        Geheimnisvolle Orte
+      </a>
 
+      <a href="about.html">
+        Über den Podcast
+      </a>
+
+      <a
+        href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+    </div>
 
   </nav>
+
+
 
   <!-- ==========================================
        LOGO
@@ -100,22 +111,22 @@ content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen
 
   <div class="full-width-logo">
 
-
-<img
-  src="Brandenburgs-dunkle-Geheimnisse-Logo-1920.webp"
-  srcset="
-    Brandenburgs-dunkle-Geheimnisse-Logo-640.webp 640w,
-    Brandenburgs-dunkle-Geheimnisse-Logo-960.webp 960w,
-    Brandenburgs-dunkle-Geheimnisse-Logo-1280.webp 1280w,
-    Brandenburgs-dunkle-Geheimnisse-Logo-1920.webp 1920w
-  "
-  sizes="100vw"
-  alt="Brandenburgs dunkle Geheimnisse – Podcast-Logo"
-  fetchpriority="high"
->
-
+    <img
+      src="Brandenburgs-dunkle-Geheimnisse-Logo-1920.webp"
+      srcset="
+        Brandenburgs-dunkle-Geheimnisse-Logo-640.webp 640w,
+        Brandenburgs-dunkle-Geheimnisse-Logo-960.webp 960w,
+        Brandenburgs-dunkle-Geheimnisse-Logo-1280.webp 1280w,
+        Brandenburgs-dunkle-Geheimnisse-Logo-1920.webp 1920w
+      "
+      sizes="100vw"
+      alt="Brandenburgs dunkle Geheimnisse – Podcast-Logo"
+      fetchpriority="high"
+    >
 
   </div>
+
+
 
   <!-- ==========================================
        HERO TEXT
@@ -123,26 +134,35 @@ content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen
 
   <div class="hero-content">
 
+    <p class="eyebrow">
+      Der Mystery-Podcast aus Brandenburg
+    </p>
 
-<p class="eyebrow">
-  Der Mystery-Podcast aus Brandenburg
-</p>
+    <h1>
+      Brandenburgs dunkle Geheimnisse
+    </h1>
 
-<h1>
-  Brandenburgs dunkle Geheimnisse
-</h1>
+    <p class="hero-description">
+      Was verbirgt sich hinter den stillen Seen, dichten Wäldern und alten Dörfern Brandenburgs?
+    </p>
 
-<p class="hero-description">
-  Was verbirgt sich hinter den stillen Seen, dichten Wäldern und alten Dörfern
-  Brandenburgs?
-</p>
 
+    <a
+      class="hero-cta"
+      href="#neueste-folge"
+    >
+      Neueste Folge hören →
+    </a>
 
   </div>
 
+
 </header>
 
+
+
 <main>
+
 
   <!-- ==========================================
        NEUESTE FOLGE
@@ -153,129 +173,343 @@ content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen
     class="latest-section"
   >
 
-<div class="latest-intro">
 
-  <p class="eyebrow">
-    DIE NEUESTE FOLGE
-  </p>
+    <div class="latest-intro">
 
-  <h2>
-    Der Teufelssee
-  </h2>
+      <p class="eyebrow">
+        DIE NEUESTE FOLGE
+      </p>
 
-  <p>
-    Folge 3 von „Brandenburgs dunkle Geheimnisse“
-  </p>
+      <h2>
+        Der Wassermann vom Spreewald
+      </h2>
 
-</div>
+      <p>
+        Folge 4 von „Brandenburgs dunkle Geheimnisse“
+      </p>
 
-
-<div class="spotify-single">
-
-  <div
-    class="spotify-lazy"
-    data-spotify-id="34nZBnLAwnBIxB8N3aU7g2"
-  >
-
-    <div class="spotify-placeholder">
-
-      <div class="spotify-placeholder-content">
-
-        <div class="spotify-episode-number">
-          #03
-        </div>
-
-        <strong>
-          Der Teufelssee
-        </strong>
-
-        <span>
-          Brandenburgs dunkle Geheimnisse
-        </span>
-
-        <button
-          type="button"
-          aria-label="Der Teufelssee auf Spotify abspielen"
-        >
-          ▶&nbsp; Episode anhören
-        </button>
-
+      <div class="latest-meta">
+        Spreewald · Sage
       </div>
 
     </div>
 
-  </div>
-
-</div>
 
 
-<a
-  class="all-episodes-button"
-  href="folgen.html"
->
-  Alle Folgen ansehen →
-</a>
+    <div class="latest-feature">
+
+
+      <div class="latest-feature-text">
+
+        <p>
+          Im Spreewald erzählen sich die Menschen seit Generationen
+          Geschichten von einem geheimnisvollen Wassermann.
+          Doch woher kommt die Sage – und was steckt hinter der
+          Gestalt, die tief unter der Wasseroberfläche leben soll?
+        </p>
+
+
+        <a
+          class="episode-link"
+          href="folge-4-wassermann.html"
+        >
+          Geschichte entdecken →
+        </a>
+
+      </div>
+
+
+
+      <div class="spotify-single">
+
+        <div
+          class="spotify-lazy"
+          data-spotify-id=""
+        >
+
+          <div class="spotify-placeholder">
+
+            <div class="spotify-placeholder-content">
+
+              <div class="spotify-episode-number">
+                #04
+              </div>
+
+              <strong>
+                Der Wassermann vom Spreewald
+              </strong>
+
+              <span>
+                Brandenburgs dunkle Geheimnisse
+              </span>
+
+              <button
+                type="button"
+                aria-label="Der Wassermann vom Spreewald auf Spotify abspielen"
+              >
+                ▶&nbsp; Episode anhören
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <a
+      class="all-episodes-button"
+      href="folgen.html"
+    >
+      Alle Folgen ansehen →
+    </a>
 
 
   </section>
 
+
+
   <!-- ==========================================
-       MYSTERY-KARTE
+       GEHEIMNISVOLLE ORTE
        ========================================== -->
 
   <section class="mystery-map-section">
 
 
-<div class="mystery-map-intro">
+    <div class="mystery-map-intro">
 
-  <p class="eyebrow">
-    BRANDENBURGS GEHEIMNISVOLLE ORTE
-  </p>
+      <p class="eyebrow">
+        BRANDENBURGS GEHEIMNISVOLLE ORTE
+      </p>
 
-  <h2>
-    Entdecke die Geschichten hinter den Orten
-  </h2>
-
-  <div
-    class="mystery-map-divider"
-    aria-hidden="true"
-  >
-    <b>◇</b>
-  </div>
-
-  <p>
-    Von verschwundenen Dörfern bis zu geheimnisvollen Seen:
-    Auf dieser Karte findest du die Orte, an denen die Geschichten von
-    „Brandenburgs dunkle Geheimnisse“ spielen.
-  </p>
-
-  <p class="map-intro-hint">
-    Klicke auf einen Ort und entdecke seine Geschichte.
-  </p>
-
-</div>
+      <h2>
+        Entdecke die Geschichten hinter den Orten
+      </h2>
 
 
+      <div
+        class="mystery-map-divider"
+        aria-hidden="true"
+      >
+        <b>◇</b>
+      </div>
 
-<div class="mystery-map-wrapper">
 
-  <div id="mystery-map"></div>
+      <p>
+        Von verschwundenen Dörfern bis zu geheimnisvollen Seen:
+        Auf dieser Karte findest du die Orte, an denen die Geschichten
+        von „Brandenburgs dunkle Geheimnisse“ spielen.
+      </p>
+
+      <p class="map-intro-hint">
+        Klicke auf einen Ort und entdecke seine Geschichte.
+      </p>
 
 
-  <div class="map-hint">
+      <a
+        class="map-page-link"
+        href="geheimnisvolle-orte.html"
+      >
+        Alle geheimnisvollen Orte entdecken →
+      </a>
 
-    <span class="map-hint-dot"></span>
+    </div>
 
-    Ort auswählen
 
-  </div>
 
-</div>
+    <div class="mystery-map-wrapper">
+
+      <div id="mystery-map"></div>
+
+
+      <div class="map-hint">
+
+        <span class="map-hint-dot"></span>
+
+        Ort auswählen
+
+      </div>
+
+    </div>
 
 
   </section>
 
+
+
+  <!-- ==========================================
+       WEITERE GESCHICHTEN
+       ========================================== -->
+
+  <section class="other-episodes-section">
+
+
+    <div class="section-heading">
+
+      <p class="eyebrow">
+        WEITERE GESCHICHTEN
+      </p>
+
+      <h2>
+        Geschichten, die bleiben
+      </h2>
+
+    </div>
+
+
+
+    <div class="episode-preview-grid">
+
+
+      <!-- Folge 3 -->
+
+      <article class="episode-preview-card">
+
+        <div class="episode-preview-number">
+          #03
+        </div>
+
+        <p class="episode-preview-category">
+          Sage & Natur
+        </p>
+
+        <h3>
+          Der Teufelssee
+        </h3>
+
+        <p>
+          Ein geheimnisvoller Waldsee, um den sich eine alte Geschichte
+          von einem Mönch und dem Teufel rankt.
+        </p>
+
+        <a href="folge-3-teufelssee.html">
+          Geschichte entdecken →
+        </a>
+
+      </article>
+
+
+
+      <!-- Folge 2 -->
+
+      <article class="episode-preview-card">
+
+        <div class="episode-preview-number">
+          #02
+        </div>
+
+        <p class="episode-preview-category">
+          Sage
+        </p>
+
+        <h3>
+          Das Hoawief
+        </h3>
+
+        <p>
+          Eine alte Wirtschafterin, ein schwerer Schlüsselbund und
+          ein Geist, der keine Ruhe findet.
+        </p>
+
+        <a href="folge-2-das-hoawief.html">
+          Geschichte entdecken →
+        </a>
+
+      </article>
+
+
+
+      <!-- Folge 1 -->
+
+      <article class="episode-preview-card">
+
+        <div class="episode-preview-number">
+          #01
+        </div>
+
+        <p class="episode-preview-category">
+          Sage
+        </p>
+
+        <h3>
+          Die Glocken von Zelsow
+        </h3>
+
+        <p>
+          Ein verschwundenes Dorf, drei Glocken und eine geheimnisvolle
+          Stimme aus dem Wasser.
+        </p>
+
+        <a href="folge-1-glocken-von-zelsow.html">
+          Geschichte entdecken →
+        </a>
+
+      </article>
+
+
+    </div>
+
+
+
+    <a
+      class="all-episodes-button"
+      href="folgen.html"
+    >
+      Alle Folgen entdecken →
+    </a>
+
+
+  </section>
+
+
+
+  <!-- ==========================================
+       ÜBER DEN PODCAST
+       ========================================== -->
+
+  <section class="about-preview-section">
+
+
+    <div class="about-preview-content">
+
+      <p class="eyebrow">
+        ÜBER DEN PODCAST
+      </p>
+
+      <h2>
+        Brandenburg hat mehr Geschichten,
+        als man denkt.
+      </h2>
+
+      <p>
+        Von alten Sagen und verschwundenen Dörfern bis zu rätselhaften
+        Orten und historischen Kriminalfällen: „Brandenburgs dunkle
+        Geheimnisse“ erzählt die Geschichten hinter den Geschichten –
+        spannend, atmosphärisch und mit einem Blick auf das,
+        was tatsächlich dahintersteckt.
+      </p>
+
+      <a
+        class="episode-link"
+        href="about.html"
+      >
+        Mehr über den Podcast →
+      </a>
+
+    </div>
+
+
+  </section>
+
+
 </main>
+
+
 
 <!-- ==========================================
      FOOTER
@@ -295,20 +529,17 @@ content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen
     Datenschutz
   </a>
 
-<a
-href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
-target="_blank"
-rel="noopener"
-
->
-
-
-Instagram
-
-
+  <a
+    href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
+    target="_blank"
+    rel="noopener"
+  >
+    Instagram
   </a>
 
 </footer>
+
+
 
 <!-- ==========================================
      LEAFLET
@@ -318,9 +549,12 @@ Instagram
   src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 ></script>
 
+
+
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
+
 
 
   /* ==========================================
@@ -466,7 +700,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  
   /* ==========================================
      MYSTERY-KARTE
      ========================================== */
@@ -504,18 +737,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /*
-   * Dunkle Kartendarstellung
+   * OpenStreetMap
    */
 
- L.tileLayer(
-  "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-  {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+  L.tileLayer(
+    "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
 
-    maxZoom: 19
-  }
-).addTo(map);
+      maxZoom: 19
+    }
+  ).addTo(map);
 
 
   /*
@@ -646,7 +879,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     marker.bindPopup(
 
-      `
+      
         <div class="mystery-popup">
 
           <div class="mystery-popup-category">
@@ -673,7 +906,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
 
         </div>
-      `
+      
 
     );
 
