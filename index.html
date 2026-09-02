@@ -466,6 +466,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+  
   /* ==========================================
      MYSTERY-KARTE
      ========================================== */
@@ -503,25 +504,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /*
-   * OpenStreetMap
-   * API-Key-frei
+   * Dunkle Kartendarstellung
    */
 
-  L.tileLayer(
-    "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-    {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+ L.tileLayer(
+  "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
 
-      maxZoom: 19
-    }
-  ).addTo(map);
+    maxZoom: 19
+  }
+).addTo(map);
 
 
-
-  /* ==========================================
-     ZOOM-BUTTONS
-     ========================================== */
+  /*
+   * Zoom-Buttons
+   */
 
   L.control.zoom({
     position: "bottomright"
@@ -646,7 +645,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     marker.bindPopup(
-      
+
+      `
         <div class="mystery-popup">
 
           <div class="mystery-popup-category">
@@ -673,7 +673,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
 
         </div>
-   
+      `
 
     );
 
@@ -683,6 +683,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+
 
 </body>
 </html>
