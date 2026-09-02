@@ -1624,3 +1624,46 @@ footer a:hover {
   }
 
 }
+
+/* ==========================================
+   DUNKLE OPENSTREETMAP-KARTE
+   ========================================== */
+
+#mystery-map .leaflet-tile-pane {
+  filter:
+    brightness(0.55)
+    contrast(1.15)
+    saturate(0.45);
+}
+
+/* Kartenbeschriftungen etwas besser lesbar */
+#mystery-map .leaflet-control-attribution {
+  background: rgba(0, 0, 0, 0.75);
+  color: #aaa49c;
+  font-size: 10px;
+}
+
+#mystery-map .leaflet-control-attribution a {
+  color: #c9a66b;
+}
+
+/* Zoom-Buttons */
+#mystery-map .leaflet-control-zoom {
+  border: 1px solid #383838 !important;
+  box-shadow: none;
+}
+
+#mystery-map .leaflet-control-zoom a {
+  background: #181818 !important;
+  color: #c9a66b !important;
+  border-bottom: 1px solid #383838 !important;
+}
+
+#mystery-map .leaflet-control-zoom a:last-child {
+  border-bottom: none !important;
+}
+
+#mystery-map .leaflet-control-zoom a:hover {
+  background: #222222 !important;
+  color: #f3eee5 !important;
+}
