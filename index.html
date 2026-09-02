@@ -465,18 +465,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /*
-   * OpenStreetMap
+   * Dunkle Kartendarstellung
    */
 
-  L.tileLayer(
-    "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-    {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+ L.tileLayer(
+  "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
 
-      maxZoom: 19
-    }
-  ).addTo(map);
+    maxZoom: 19
+  }
+).addTo(map);
 
 
   /*
@@ -486,6 +486,7 @@ document.addEventListener("DOMContentLoaded", function () {
   L.control.zoom({
     position: "bottomright"
   }).addTo(map);
+
 
 
   /* ==========================================
@@ -511,6 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
         [0, -14]
 
     });
+
 
 
   /* ==========================================
@@ -584,6 +586,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
 
+
   /* ==========================================
      MARKER AUF KARTE SETZEN
      ========================================== */
@@ -604,7 +607,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     marker.bindPopup(
 
-      
+      `
         <div class="mystery-popup">
 
           <div class="mystery-popup-category">
@@ -631,7 +634,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
 
         </div>
-      
+      `
 
     );
 
