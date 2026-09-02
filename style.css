@@ -175,11 +175,11 @@ width: 100%;
 height: auto;
 max-width: none;
 
-```
+
 object-fit: contain;
 object-position: center center;
 background: #000000;
-```
+
 
 }
 
@@ -1215,14 +1215,14 @@ padding: 90px 0 120px !important;
 .episodes-grid {
 display: grid !important;
 
-```
+
 grid-template-columns:
   repeat(3, minmax(0, 1fr)) !important;
 
 gap: 32px !important;
 
 width: 100% !important;
-```
+
 
 }
 
@@ -1230,9 +1230,9 @@ width: 100% !important;
 width: 100% !important;
 min-width: 0 !important;
 
-```
+
 padding: 30px !important;
-```
+
 
 }
 
@@ -1257,25 +1257,24 @@ width: 100% !important;
 width: calc(100% - 60px) !important;
 max-width: 1100px !important;
 
-```
+
 margin: 0 auto !important;
 
 padding: 80px 0 100px !important;
-```
+
 
 }
 
 .episodes-grid {
 display: grid !important;
 
-```
 grid-template-columns:
   repeat(2, minmax(0, 1fr)) !important;
 
 gap: 26px !important;
 
 width: 100% !important;
-```
+
 
 }
 
@@ -1283,9 +1282,9 @@ width: 100% !important;
 width: 100% !important;
 min-width: 0 !important;
 
-```
+
 padding: 26px !important;
-```
+
 
 }
 
@@ -1333,13 +1332,13 @@ body {
 width: 100%;
 min-height: 100%;
 
-```
+
 margin: 0;
 
 background: #000000;
 
 overflow-x: hidden;
-```
+
 
 }
 
@@ -1371,7 +1370,7 @@ padding: 0 0 35px;
 .mobile-nav {
 position: absolute;
 
-```
+
 top: 0;
 left: 0;
 right: 0;
@@ -1387,7 +1386,7 @@ min-height: 76px;
 padding: 0;
 
 background: rgba(0, 0, 0, 0.45);
-```
+
 
 }
 
@@ -1399,7 +1398,7 @@ visibility: hidden;
 .mobile-toggle {
 position: absolute;
 
-```
+
 top: 16px;
 right: 6%;
 
@@ -1423,14 +1422,14 @@ border-radius: 4px;
 background: rgba(0, 0, 0, 0.7);
 
 cursor: pointer;
-```
+
 
 }
 
 .mobile-toggle span {
 display: block;
 
-```
+
 width: 24px;
 height: 2px;
 
@@ -1438,7 +1437,7 @@ background: var(--light);
 
 transition:
   transform 0.2s ease;
-```
+
 
 }
 
@@ -1457,7 +1456,7 @@ translateY(-4.5px) rotate(-45deg);
 .nav-right {
 position: absolute;
 
-```
+
 top: 76px;
 left: 0;
 right: 0;
@@ -1496,7 +1495,7 @@ display: flex;
 .nav-right a {
 display: block;
 
-```
+   
 width: 100%;
 min-height: 44px;
 
@@ -1510,7 +1509,7 @@ color: var(--light);
 font-size: 0.95rem;
 
 text-shadow: none;
-```
+
 
 }
 
@@ -1540,12 +1539,12 @@ background: #000000;
 width: 100%;
 height: 100%;
 
-```
+
 object-fit: cover;
 object-position: center center;
 
 background: #000000;
-```
+
 
 }
 
@@ -1564,13 +1563,13 @@ rgba(0, 0, 0, 0.92) 100%
 width: 100%;
 max-width: 100%;
 
-```
+
 margin: 0;
 
 padding: 25px 6% 0;
 
 background: #000000;
-```
+
 
 }
 
@@ -1578,10 +1577,10 @@ background: #000000;
 margin-top: 0;
 margin-bottom: 16px;
 
-```
+
 font-size:
   clamp(2.3rem, 12vw, 4rem);
-```
+
 
 }
 
@@ -1597,20 +1596,20 @@ NEUESTE FOLGE – MOBILE
 width: 100%;
 max-width: 100%;
 
-```
+
 margin: 0;
 
 padding: 50px 6% 60px;
-```
+
 
 }
 
 .latest-intro {
 margin-bottom: 24px;
 
-```
+
 text-align: center !important;
-```
+
 
 }
 
@@ -1622,18 +1621,18 @@ margin-bottom: 10px;
 font-size:
 clamp(2rem, 9vw, 3rem);
 
-```
+
 text-align: center !important;
-```
+
 
 }
 
 .latest-intro > p:last-child {
 font-size: 0.82rem;
 
-```
+
 text-align: center !important;
-```
+
 
 }
 
@@ -1654,11 +1653,11 @@ KARTE – MOBILE
 width: 100%;
 max-width: 100%;
 
-```
+
 margin: 0;
 
 padding: 55px 6% 70px;
-```
+
 
 }
 
@@ -1673,19 +1672,19 @@ margin-bottom: 10px;
 .mystery-map-intro h2 {
 margin-bottom: 16px;
 
-```
+
 font-size:
   clamp(2rem, 9vw, 3rem);
-```
+
 
 }
 
 .mystery-map-divider {
 width: 170px;
 
-```
+
 margin-bottom: 18px;
-```
+
 
 }
 
@@ -1707,9 +1706,9 @@ font-size: 0.74rem;
 .mystery-map-wrapper {
 height: 500px;
 
-```
+
 border-radius: 8px;
-```
+
 
 }
 
@@ -1717,9 +1716,9 @@ border-radius: 8px;
 left: 14px;
 bottom: 14px;
 
-```
+
 font-size: 0.68rem;
-```
+
 
 }
 
@@ -1737,9 +1736,9 @@ font-size: 1.35rem;
 .subpage-header {
 min-height: 76px;
 
-```
+
 padding: 0 6%;
-```
+
 
 }
 
@@ -1747,9 +1746,9 @@ padding: 0 6%;
 .episodes-page {
 width: 100%;
 
-```
+
 padding: 70px 6% 85px;
-```
+
 
 }
 
@@ -1779,9 +1778,9 @@ height: 140px;
 .spotify-button {
 width: 100%;
 
-```
+
 text-align: center;
-```
+
 
 }
 
@@ -1794,40 +1793,40 @@ padding: 30px 6%;
 .episode-detail {
 width: 100%;
 
-```
+
 padding: 70px 6% 90px;
-```
+
 
 }
 
 .episode-layout {
 flex-direction: column;
 
-```
+
 gap: 22px;
-```
+
 
 }
 
 .episodes-grid {
 display: grid !important;
 
-```
+
 grid-template-columns: 1fr !important;
 
 gap: 18px !important;
 
 width: 100% !important;
-```
+
 
 }
 
 .episodes-grid .full-episode {
 width: 100% !important;
 
-```
+
 padding: 22px !important;
-```
+
 
 }
 
