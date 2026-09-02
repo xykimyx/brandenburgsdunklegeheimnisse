@@ -1865,7 +1865,7 @@ font-size: 0.9rem;
       #111111 55%,
       #161616 100%
     );
-  border: 1px solid rgba(201, 166, 107, 0.35);
+/* border: 1px solid rgba(201, 166, 107, 0.35); */
   border-radius: 18px;
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.35),
