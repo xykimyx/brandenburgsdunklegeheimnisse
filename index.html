@@ -1,165 +1,131 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Brandenburgs dunkle Geheimnisse | Mystery- und True-Crime-Podcast</title>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta
-    name="description"
-    content="Brandenburgs dunkle Geheimnisse ist ein Podcast über Sagen, historische Kriminalfälle und rätselhafte Orte in Brandenburg."
-  >
+  <meta name="description" content="Brandenburgs dunkle Geheimnisse ist ein Podcast über Sagen, historische Kriminalfälle und rätselhafte Orte in Brandenburg.">
 
-  <meta
-    name="keywords"
-    content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen Brandenburg, Kriminalfälle Brandenburg, geheimnisvolle Orte Brandenburg"
-  >
+  <meta name="keywords" content="Podcast Brandenburg, True Crime Brandenburg, Mystery Brandenburg, Sagen Brandenburg, Kriminalfälle Brandenburg, geheimnisvolle Orte Brandenburg">
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Leaflet für die interaktive Karte -->
+  <!-- Leaflet -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   >
-
 </head>
-
 
 <body>
 
+<header class="hero">
 
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
+  <nav class="mobile-nav">
 
-  <header class="hero">
+    <a class="mobile-home-link" href="index.html">
+      Brandenburgs dunkle Geheimnisse
+    </a>
 
-    <nav class="mobile-nav">
+    <button
+      class="mobile-toggle"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span></span>
+      <span></span>
+    </button>
 
-      <a class="mobile-home-link" href="index.html">
-        Brandenburgs dunkle Geheimnisse
+    <div class="nav-right" id="mobile-menu">
+
+      <a class="mobile-start-link" href="index.html">
+        Startseite
       </a>
 
-      <button
-        class="mobile-toggle"
-        type="button"
-        aria-label="Menü öffnen"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <span></span>
-        <span></span>
-      </button>
+      <a href="folgen.html">Folgen</a>
 
-      <div class="nav-right" id="mobile-menu">
-
-        <a class="mobile-start-link" href="index.html">
-          Startseite
-        </a>
-
-        <a href="folgen.html">
-          Folgen
-        </a>
-
-        <a href="about.html">
-          Über den Podcast
-        </a>
-
-        <a
-          href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
-          target="_blank"
-          rel="noopener"
-        >
-          Instagram
-        </a>
-
-      </div>
-
-    </nav>
-
-
-    <div class="full-width-logo">
-
-      <picture>
-
-        <source
-          media="(max-width: 700px)"
-          srcset="
-            Brandenburgs-dunkle-Geheimnisse-Logo-640.webp 640w,
-            Brandenburgs-dunkle-Geheimnisse-Logo-960.webp 960w
-          "
-        >
-
-        <img
-          src="Brandenburgs-dunkle-Geheimnisse-Logo-1920.webp"
-          srcset="
-            Brandenburgs-dunkle-Geheimnisse-Logo-640.webp 640w,
-            Brandenburgs-dunkle-Geheimnisse-Logo-960.webp 960w,
-            Brandenburgs-dunkle-Geheimnisse-Logo-1280.webp 1280w,
-            Brandenburgs-dunkle-Geheimnisse-Logo-1920.webp 1920w
-          "
-          sizes="100vw"
-          alt="Brandenburgs dunkle Geheimnisse"
-        >
-
-      </picture>
-
-    </div>
-
-
-    <div class="hero-content">
-
-      <p class="eyebrow">
-        Ein Podcast über Brandenburg
-      </p>
-
-      <h1>
-        Brandenburgs dunkle Geheimnisse
-      </h1>
-
-      <p class="hero-description">
-        Alte Sagen, rätselhafte Orte und Geschichten,
-        die sich bis heute nicht ganz erklären lassen.
-      </p>
+      <a href="about.html">Über den Podcast</a>
 
       <a
-        class="button"
-        href="#neueste-folgen"
+        href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
+        target="_blank"
+        rel="noopener"
       >
-        Folgen entdecken
+        Instagram
       </a>
 
     </div>
 
-  </header>
+  </nav>
 
 
+  <div class="full-width-logo">
 
-  <!-- =====================================================
-       INTERAKTIVE KARTE
-  ====================================================== -->
+    <img
+      src="Brandenburgs-dunkle-Geheimnisse-Logo-1920.webp"
+      srcset="
+        Brandenburgs-dunkle-Geheimnisse-Logo-640.webp 640w,
+        Brandenburgs-dunkle-Geheimnisse-Logo-960.webp 960w,
+        Brandenburgs-dunkle-Geheimnisse-Logo-1280.webp 1280w,
+        Brandenburgs-dunkle-Geheimnisse-Logo-1920.webp 1920w
+      "
+      sizes="100vw"
+      alt="Brandenburgs dunkle Geheimnisse – Podcast-Logo"
+      fetchpriority="high"
+    >
+
+  </div>
+
+
+  <div class="hero-content">
+
+    <p class="eyebrow">
+      Der Mystery-Podcast aus Brandenburg
+    </p>
+
+    <h1>
+      Brandenburgs dunkle Geheimnisse
+    </h1>
+
+    <p class="hero-description">
+      Was verbirgt sich hinter den stillen Seen, dichten Wäldern und alten Dörfern
+      Brandenburgs?
+    </p>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+  <!-- ==========================================
+       MYSTERY-KARTE
+       ========================================== -->
 
   <section class="mystery-map-section">
 
     <div class="mystery-map-intro">
 
       <p class="eyebrow">
-        Brandenburg steckt voller Geschichten
+        Brandenburgs geheimnisvolle Orte
       </p>
 
       <h2>
-        Entdecke Brandenburgs<br>
-        dunkle Geheimnisse
+        Entdecke die Geschichten
+        hinter den Orten
       </h2>
 
       <p>
-        Überall im Land verbergen sich Sagen, Legenden und
-        rätselhafte Geschichten. Klicke auf einen Ort und
-        entdecke seine Geschichte.
+        Von verschwundenen Dörfern bis zu geheimnisvollen Seen:
+        Auf dieser Karte findest du die Orte, an denen die Geschichten
+        von „Brandenburgs dunkle Geheimnisse“ spielen.
       </p>
 
     </div>
@@ -172,7 +138,6 @@
         aria-label="Interaktive Karte mit geheimnisvollen Orten in Brandenburg"
       ></div>
 
-
       <div class="map-hint">
         <span class="map-hint-dot"></span>
         Klicke auf einen Punkt
@@ -184,652 +149,582 @@
 
 
 
-  <!-- =====================================================
+  <!-- ==========================================
        NEUESTE FOLGEN
-  ====================================================== -->
+       ========================================== -->
 
-  <main>
+  <section id="neueste-folgen" class="latest-section">
 
-    <section
-      id="neueste-folgen"
-      class="latest-section"
-    >
 
-      <div class="section-heading">
+    <section class="spotify-grid">
 
-        <p class="eyebrow">
-          Der Podcast
-        </p>
 
-        <h2>
-          Neueste Folgen
-        </h2>
+      <!-- FOLGE 3 -->
 
-        <p class="section-intro">
-          Geschichten aus Brandenburg zwischen Sage,
-          Wahrheit und dem, was vielleicht besser im
-          Dunkeln bleibt.
-        </p>
+      <div
+        class="spotify-lazy"
+        data-spotify-id="34nZBnLAwnBIxB8N3aU7g2"
+      >
+
+        <div class="spotify-placeholder">
+
+          <div class="spotify-placeholder-content">
+
+            <div class="spotify-episode-number">
+              #03
+            </div>
+
+            <strong>
+              Der Teufelssee
+            </strong>
+
+            <span>
+              Brandenburgs dunkle Geheimnisse
+            </span>
+
+            <button
+              type="button"
+              aria-label="Der Teufelssee auf Spotify abspielen"
+            >
+              ▶&nbsp; Episode anhören
+            </button>
+
+          </div>
+
+        </div>
 
       </div>
 
 
-      <div class="spotify-grid">
 
+      <!-- FOLGE 2 -->
 
-        <!-- =================================================
-             FOLGE 3
-        ================================================== -->
+      <div
+        class="spotify-lazy"
+        data-spotify-id="7zQB3D7PBd0P2ozx8K6lto"
+      >
 
-        <article class="spotify-card">
+        <div class="spotify-placeholder">
 
-          <div
-            class="spotify-placeholder"
-            data-spotify-id="34nZBnLAwnBIxB8N3aU7g2"
-            role="button"
-            tabindex="0"
-            aria-label="Folge 3 Der Teufelssee abspielen"
-          >
+          <div class="spotify-placeholder-content">
 
-            <div class="spotify-placeholder-content">
-
-              <p class="episode-meta">
-                Folge 3
-              </p>
-
-              <strong>
-                Der Teufelssee
-              </strong>
-
-              <span>
-                Ein kleiner Waldsee, eine alte Sage
-                und ein geheimnisvoller Mönch.
-              </span>
-
-              <button
-                type="button"
-                aria-label="Der Teufelssee abspielen"
-              >
-                ▶&nbsp; Folge abspielen
-              </button>
-
+            <div class="spotify-episode-number">
+              #02
             </div>
+
+            <strong>
+              Das Hoawief
+            </strong>
+
+            <span>
+              Brandenburgs dunkle Geheimnisse
+            </span>
+
+            <button
+              type="button"
+              aria-label="Das Hoawief auf Spotify abspielen"
+            >
+              ▶&nbsp; Episode anhören
+            </button>
 
           </div>
 
-
-          <a
-            class="button"
-            href="folge-3-teufelssee.html"
-          >
-            Zur Folge
-          </a>
-
-        </article>
-
-
-
-        <!-- =================================================
-             FOLGE 2
-        ================================================== -->
-
-        <article class="spotify-card">
-
-          <div
-            class="spotify-placeholder"
-            data-spotify-id="7zQB3D7PBd0P2ozx8K6lto"
-            role="button"
-            tabindex="0"
-            aria-label="Folge 2 Das Hoawief abspielen"
-          >
-
-            <div class="spotify-placeholder-content">
-
-              <p class="episode-meta">
-                Folge 2
-              </p>
-
-              <strong>
-                Das Hoawief
-              </strong>
-
-              <span>
-                Eine alte Wirtschafterin, ein schwerer
-                Schlüsselbund und ein Geist.
-              </span>
-
-              <button
-                type="button"
-                aria-label="Das Hoawief abspielen"
-              >
-                ▶&nbsp; Folge abspielen
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <a
-            class="button"
-            href="folge-2-das-hoawief.html"
-          >
-            Zur Folge
-          </a>
-
-        </article>
-
-
-
-        <!-- =================================================
-             FOLGE 1
-        ================================================== -->
-
-        <article class="spotify-card">
-
-          <div
-            class="spotify-placeholder"
-            data-spotify-id="1PbDOslPTc0VE5yj3jgAGp"
-            role="button"
-            tabindex="0"
-            aria-label="Folge 1 Die Glocken von Zelsow abspielen"
-          >
-
-            <div class="spotify-placeholder-content">
-
-              <p class="episode-meta">
-                Folge 1
-              </p>
-
-              <strong>
-                Die Glocken von Zelsow
-              </strong>
-
-              <span>
-                Ein verschwundenes Dorf, drei Glocken
-                und eine Stimme aus dem Wasser.
-              </span>
-
-              <button
-                type="button"
-                aria-label="Die Glocken von Zelsow abspielen"
-              >
-                ▶&nbsp; Folge abspielen
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <a
-            class="button"
-            href="folge-1-glocken-von-zelsow.html"
-          >
-            Zur Folge
-          </a>
-
-        </article>
-
+        </div>
 
       </div>
 
 
-      <div class="latest-more">
 
-        <a
-          class="all-episodes-button"
-          href="folgen.html"
-        >
-          Alle Folgen ansehen →
-        </a>
+      <!-- FOLGE 1 -->
+
+      <div
+        class="spotify-lazy"
+        data-spotify-id="1PbDOslPTc0VE5yj3jgAGp"
+      >
+
+        <div class="spotify-placeholder">
+
+          <div class="spotify-placeholder-content">
+
+            <div class="spotify-episode-number">
+              #01
+            </div>
+
+            <strong>
+              Die Glocken von Zelsow
+            </strong>
+
+            <span>
+              Brandenburgs dunkle Geheimnisse
+            </span>
+
+            <button
+              type="button"
+              aria-label="Die Glocken von Zelsow auf Spotify abspielen"
+            >
+              ▶&nbsp; Episode anhören
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- TRAILER -->
+
+      <div
+        class="spotify-lazy"
+        data-spotify-id="1qMLU7kUdxFEFhiHIcK9Y4"
+      >
+
+        <div class="spotify-placeholder">
+
+          <div class="spotify-placeholder-content">
+
+            <div class="spotify-episode-number">
+              TRAILER
+            </div>
+
+            <strong>
+              Brandenburgs dunkle Geheimnisse
+            </strong>
+
+            <span>
+              Der Podcast-Trailer
+            </span>
+
+            <button
+              type="button"
+              aria-label="Podcast-Trailer auf Spotify abspielen"
+            >
+              ▶&nbsp; Trailer anhören
+            </button>
+
+          </div>
+
+        </div>
 
       </div>
 
 
     </section>
 
-  </main>
-
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer>
-
-    <p>
-      © 2026 Brandenburgs dunkle Geheimnisse
-    </p>
-
-    <a href="impressum.html">
-      Impressum
-    </a>
-
-    <a href="datenschutz.html">
-      Datenschutz
-    </a>
 
     <a
-      href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
-      target="_blank"
-      rel="noopener"
+      class="all-episodes-button"
+      href="folgen.html"
     >
-      Instagram
+      Alle Folgen ansehen →
     </a>
 
-  </footer>
+  </section>
+
+
+</main>
+
+
+<footer>
+
+  <p>
+    © 2026 Brandenburgs dunkle Geheimnisse
+  </p>
+
+  <a href="impressum.html">
+    Impressum
+  </a>
+
+  <a href="datenschutz.html">
+    Datenschutz
+  </a>
+
+  <a
+    href="https://www.instagram.com/brandenburgsdunklegeheimnisse/"
+    target="_blank"
+    rel="noopener"
+  >
+    Instagram
+  </a>
+
+</footer>
 
 
 
-  <!-- =====================================================
-       LEAFLET
-  ====================================================== -->
+<!-- ==========================================
+     LEAFLET
+     ========================================== -->
 
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  ></script>
-
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
-  <script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-
-      /* ===================================================
-         MOBILE MENÜ
-      ==================================================== */
-
-      const toggle =
-        document.querySelector(".mobile-toggle");
-
-      const menu =
-        document.querySelector("#mobile-menu");
-
-
-      if (toggle && menu) {
-
-        toggle.addEventListener("click", function () {
-
-          const isOpen =
-            menu.classList.toggle("is-open");
-
-          toggle.classList.toggle(
-            "is-open",
-            isOpen
-          );
-
-          toggle.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-          );
-
-          toggle.setAttribute(
-            "aria-label",
-            isOpen
-              ? "Menü schließen"
-              : "Menü öffnen"
-          );
-
-        });
-
-
-        menu.querySelectorAll("a").forEach(function (link) {
-
-          link.addEventListener("click", function () {
-
-            menu.classList.remove("is-open");
-
-            toggle.classList.remove("is-open");
-
-            toggle.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-            toggle.setAttribute(
-              "aria-label",
-              "Menü öffnen"
-            );
-
-          });
-
-        });
-
-      }
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
 
 
 
-      /* ===================================================
-         SPOTIFY LAZY LOADING
-      ==================================================== */
+<script>
 
-      const spotifyPlaceholders =
-        document.querySelectorAll(
-          ".spotify-placeholder"
+document.addEventListener("DOMContentLoaded", function () {
+
+
+  /* ==========================================
+     MOBILE MENÜ
+     ========================================== */
+
+  const toggle =
+    document.querySelector(".mobile-toggle");
+
+  const menu =
+    document.querySelector("#mobile-menu");
+
+
+  if (toggle && menu) {
+
+    toggle.addEventListener("click", function () {
+
+      const isOpen =
+        menu.classList.toggle("is-open");
+
+      toggle.classList.toggle(
+        "is-open",
+        isOpen
+      );
+
+      toggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      toggle.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Menü schließen"
+          : "Menü öffnen"
+      );
+
+    });
+
+
+    menu.querySelectorAll("a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        menu.classList.remove("is-open");
+
+        toggle.classList.remove("is-open");
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "false"
         );
 
-
-      spotifyPlaceholders.forEach(function (placeholder) {
-
-
-        function loadSpotify() {
-
-          if (
-            placeholder.dataset.loaded === "true"
-          ) {
-            return;
-          }
-
-
-          const spotifyId =
-            placeholder.dataset.spotifyId;
-
-
-          if (!spotifyId) {
-            return;
-          }
-
-
-          const iframe =
-            document.createElement("iframe");
-
-
-          iframe.src =
-            "https://open.spotify.com/embed/episode/"
-            + spotifyId
-            + "?utm_source=generator&theme=0";
-
-
-          iframe.width = "100%";
-
-          iframe.height = "352";
-
-          iframe.frameBorder = "0";
-
-          iframe.allowFullscreen = true;
-
-          iframe.loading = "lazy";
-
-          iframe.allow =
-            "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-
-          iframe.style.borderRadius = "12px";
-
-
-          placeholder.innerHTML = "";
-
-          placeholder.appendChild(iframe);
-
-          placeholder.dataset.loaded = "true";
-
-        }
-
-
-        placeholder.addEventListener(
-          "click",
-          function (event) {
-
-            /*
-             * Verhindert, dass ein Klick auf den
-             * eingebauten Button doppelt ausgelöst wird.
-             */
-            event.stopPropagation();
-
-            loadSpotify();
-
-          }
-        );
-
-
-        placeholder.addEventListener(
-          "keydown",
-          function (event) {
-
-            if (
-              event.key === "Enter"
-              || event.key === " "
-            ) {
-
-              event.preventDefault();
-
-              loadSpotify();
-
-            }
-
-          }
+        toggle.setAttribute(
+          "aria-label",
+          "Menü öffnen"
         );
 
       });
 
+    });
 
+  }
 
-      /* ===================================================
-         INTERAKTIVE MYSTERY-KARTE
-      ==================================================== */
 
-      const mapElement =
-        document.getElementById("mystery-map");
 
+  /* ==========================================
+     SPOTIFY LAZY LOADING
+     ========================================== */
 
-      if (
-        mapElement
-        && typeof L !== "undefined"
-      ) {
+  const spotifyPlayers =
+    document.querySelectorAll(".spotify-lazy");
 
 
-        const map =
-          L.map(
-            "mystery-map",
-            {
-              zoomControl: false,
-              scrollWheelZoom: false
-            }
-          );
+  spotifyPlayers.forEach(function (container) {
 
+    const button =
+      container.querySelector("button");
 
-        /*
-         * Brandenburg zentral anzeigen
-         */
 
-        map.setView(
-          [52.55, 13.35],
-          7
-        );
+    if (!button) {
+      return;
+    }
 
 
-        /*
-         * Dunkle Kartendarstellung
-         */
+    button.addEventListener("click", function () {
 
-        L.tileLayer(
-          "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-          {
-            attribution:
-              '&copy; OpenStreetMap &copy; CARTO',
+      const spotifyId =
+        container.getAttribute("data-spotify-id");
 
-            subdomains:
-              "abcd",
 
-            maxZoom: 19
-          }
-        ).addTo(map);
-
-
-        /*
-         * Zoom-Steuerung
-         */
-
-        L.control.zoom({
-          position: "bottomright"
-        }).addTo(map);
-
-
-        /*
-         * Eigener goldener Mystery-Marker
-         */
-
-        const mysteryIcon =
-          L.divIcon({
-
-            className:
-              "mystery-marker",
-
-            html:
-              "<span></span>",
-
-            iconSize:
-              [24, 24],
-
-            iconAnchor:
-              [12, 12],
-
-            popupAnchor:
-              [0, -14]
-
-          });
-
-
-
-        /* =================================================
-           VERÖFFENTLICHTE GESCHICHTEN
-        ================================================== */
-
-        const mysteries = [
-
-          {
-            title:
-              "Die Glocken von Zelsow",
-
-            location:
-              "Zelsow · Uckermark",
-
-            category:
-              "Sage",
-
-            description:
-              "Ein verschwundenes Dorf, drei Glocken und eine geheimnisvolle Stimme aus dem Wasser.",
-
-            coordinates:
-              [53.30, 13.95],
-
-            link:
-              "folge-1-glocken-von-zelsow.html"
-          },
-
-
-          {
-            title:
-              "Das Hoawief",
-
-            location:
-              "Brüssow · Uckermark",
-
-            category:
-              "Sage",
-
-            description:
-              "Eine alte Wirtschafterin, ein schwerer Schlüsselbund und ein Geist, der keine Ruhe findet.",
-
-            coordinates:
-              [53.40, 14.13],
-
-            link:
-              "folge-2-das-hoawief.html"
-          },
-
-
-          {
-            title:
-              "Der Teufelssee",
-
-            location:
-              "Ravensberge · Potsdam-Mittelmark",
-
-            category:
-              "Sage & Natur",
-
-            description:
-              "Ein geheimnisvoller Waldsee, um den sich eine alte Geschichte von einem Mönch und dem Teufel rankt.",
-
-            coordinates:
-              [52.29, 12.87],
-
-            link:
-              "folge-3-teufelssee.html"
-          }
-
-        ];
-
-
-
-        /* =================================================
-           MARKER ERSTELLEN
-        ================================================== */
-
-        mysteries.forEach(function (mystery) {
-
-
-          const marker =
-            L.marker(
-              mystery.coordinates,
-              {
-                icon:
-                  mysteryIcon
-              }
-            )
-            .addTo(map);
-
-
-          marker.bindPopup(
-
-            `
-              <div class="mystery-popup">
-
-                <div class="mystery-popup-category">
-                  ${mystery.category}
-                </div>
-
-                <h3>
-                  ${mystery.title}
-                </h3>
-
-                <div class="mystery-popup-location">
-                  ${mystery.location}
-                </div>
-
-                <p>
-                  ${mystery.description}
-                </p>
-
-                <a
-                  href="${mystery.link}"
-                  class="mystery-popup-link"
-                >
-                  Geschichte entdecken →
-                </a>
-
-              </div>
-            `
-
-          );
-
-        });
-
-
+      if (!spotifyId) {
+        return;
       }
+
+
+      const iframe =
+        document.createElement("iframe");
+
+
+      iframe.src =
+        "https://open.spotify.com/embed/episode/" +
+        spotifyId +
+        "?utm_source=generator&theme=0";
+
+
+      iframe.width = "100%";
+
+      iframe.height = "352";
+
+      iframe.frameBorder = "0";
+
+      iframe.allowFullscreen = true;
+
+
+      iframe.setAttribute(
+        "allow",
+        "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      );
+
+
+      iframe.setAttribute(
+        "loading",
+        "lazy"
+      );
+
+
+      iframe.style.borderRadius = "12px";
+
+
+      container.innerHTML = "";
+
+      container.appendChild(iframe);
 
     });
 
-  </script>
+  });
+
+
+
+  /* ==========================================
+     MYSTERY-KARTE
+     ========================================== */
+
+  const mapElement =
+    document.getElementById("mystery-map");
+
+
+  if (
+    !mapElement ||
+    typeof L === "undefined"
+  ) {
+    return;
+  }
+
+
+  const map =
+    L.map(
+      "mystery-map",
+      {
+        zoomControl: false,
+        scrollWheelZoom: false
+      }
+    );
+
+
+  /*
+   * Brandenburg als Ausgangspunkt
+   */
+
+  map.setView(
+    [52.55, 13.35],
+    7
+  );
+
+
+  /*
+   * Dunkle Kartendarstellung
+   */
+
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+    {
+      attribution:
+        '&copy; OpenStreetMap &copy; CARTO',
+
+      subdomains:
+        "abcd",
+
+      maxZoom: 19
+    }
+  ).addTo(map);
+
+
+  /*
+   * Zoom-Buttons
+   */
+
+  L.control.zoom({
+    position: "bottomright"
+  }).addTo(map);
+
+
+
+  /* ==========================================
+     GOLDENER MYSTERY-MARKER
+     ========================================== */
+
+  const mysteryIcon =
+    L.divIcon({
+
+      className:
+        "mystery-marker",
+
+      html:
+        "<span></span>",
+
+      iconSize:
+        [24, 24],
+
+      iconAnchor:
+        [12, 12],
+
+      popupAnchor:
+        [0, -14]
+
+    });
+
+
+
+  /* ==========================================
+     EPISODEN / ORTE
+     ========================================== */
+
+  const mysteries = [
+
+    {
+      title:
+        "Die Glocken von Zelsow",
+
+      location:
+        "Zelsow · Uckermark",
+
+      category:
+        "Sage",
+
+      description:
+        "Ein verschwundenes Dorf, drei Glocken und eine geheimnisvolle Stimme aus dem Wasser.",
+
+      coordinates:
+        [53.30, 13.95],
+
+      link:
+        "folge-1-glocken-von-zelsow.html"
+    },
+
+
+    {
+      title:
+        "Das Hoawief",
+
+      location:
+        "Brüssow · Uckermark",
+
+      category:
+        "Sage",
+
+      description:
+        "Eine alte Wirtschafterin, ein schwerer Schlüsselbund und ein Geist, der keine Ruhe findet.",
+
+      coordinates:
+        [53.40, 14.13],
+
+      link:
+        "folge-2-das-hoawief.html"
+    },
+
+
+    {
+      title:
+        "Der Teufelssee",
+
+      location:
+        "Ravensberge · Potsdam-Mittelmark",
+
+      category:
+        "Sage & Natur",
+
+      description:
+        "Ein geheimnisvoller Waldsee, um den sich eine alte Geschichte von einem Mönch und dem Teufel rankt.",
+
+      coordinates:
+        [52.29, 12.87],
+
+      link:
+        "folge-3-teufelssee.html"
+    }
+
+  ];
+
+
+
+  /* ==========================================
+     MARKER AUF KARTE SETZEN
+     ========================================== */
+
+  mysteries.forEach(function (mystery) {
+
+
+    const marker =
+      L.marker(
+        mystery.coordinates,
+        {
+          icon:
+            mysteryIcon
+        }
+      )
+      .addTo(map);
+
+
+    marker.bindPopup(
+
+      `
+        <div class="mystery-popup">
+
+          <div class="mystery-popup-category">
+            ${mystery.category}
+          </div>
+
+          <h3>
+            ${mystery.title}
+          </h3>
+
+          <div class="mystery-popup-location">
+            ${mystery.location}
+          </div>
+
+          <p>
+            ${mystery.description}
+          </p>
+
+          <a
+            href="${mystery.link}"
+            class="mystery-popup-link"
+          >
+            Geschichte entdecken →
+          </a>
+
+        </div>
+      `
+
+    );
+
+  });
+
+
+});
+
+</script>
 
 
 </body>
-
 </html>
