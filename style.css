@@ -1853,7 +1853,7 @@ font-size: 0.9rem;
 }
 
 
-```css
+
 /* ==========================================
    SPOTIFY FEATURE CARD
    ========================================== */
@@ -2012,6 +2012,45 @@ font-size: 0.9rem;
   background: var(--gold);
   border-color: var(--gold);
   text-decoration: none !important;
+}
+
+
+/* ==========================================
+   BUTTON – ALLE GESCHICHTEN
+   ========================================== */
+
+.all-episodes-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 38px auto 0;
+  padding: 13px 24px;
+
+  color: var(--gold) !important;
+  background: transparent;
+
+  border: 1px solid rgba(201, 166, 107, 0.55);
+  border-radius: 6px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none !important;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.all-episodes-button:hover {
+  color: var(--black) !important;
+  background: var(--gold);
+  border-color: var(--gold);
+  text-decoration: none !important;
+  transform: translateY(-2px);
 }
 
 
