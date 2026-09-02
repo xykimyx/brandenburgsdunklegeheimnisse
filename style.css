@@ -1851,3 +1851,132 @@ font-size: 0.9rem;
 }
 
 }
+
+
+```css
+/* ==========================================
+   SPOTIFY FEATURE CARD
+   ========================================== */
+
+.spotify-feature {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 38px;
+  background:
+    linear-gradient(
+      145deg,
+      #181818 0%,
+      #111111 55%,
+      #161616 100%
+    );
+  border: 1px solid rgba(201, 166, 107, 0.35);
+  border-radius: 18px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* ------------------------------------------
+   KOPFBEREICH
+   ------------------------------------------ */
+
+.spotify-feature-header {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.spotify-feature-meta {
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.spotify-feature-header h3 {
+  margin: 0 0 14px;
+  color: var(--light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+.spotify-feature-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+
+/* ------------------------------------------
+   DEZENTE TRENNLINIE
+   ------------------------------------------ */
+
+.spotify-feature-header::after {
+  content: "◇";
+  display: block;
+  margin: 24px auto 0;
+  color: var(--gold);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+
+/* ------------------------------------------
+   SPOTIFY EMBED
+   ------------------------------------------ */
+
+.spotify-embed-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.spotify-embed-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 352px;
+  border: 0;
+  border-radius: 12px;
+}
+
+
+/* ------------------------------------------
+   MOBILE
+   ------------------------------------------ */
+
+@media (max-width: 700px) {
+
+  .spotify-feature {
+    padding: 24px 18px;
+    border-radius: 14px;
+  }
+
+  .spotify-feature-header {
+    margin-bottom: 22px;
+  }
+
+  .spotify-feature-header h3 {
+    font-size: 2rem;
+  }
+
+  .spotify-feature-header p {
+    font-size: 0.9rem;
+  }
+
+  .spotify-embed-wrapper iframe {
+    height: 352px;
+  }
+
+}
+```
