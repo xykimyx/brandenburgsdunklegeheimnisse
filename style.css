@@ -1,1333 +1,315 @@
 /* =====================================================
-   BRANDENBURGS DUNKLE GEHEIMNISSE
-   Komplette Website-CSS
+   INTERAKTIVE MYSTERY-KARTE
    ===================================================== */
 
-
-/* =====================================================
-   1. GRUNDLAYOUT
-   ===================================================== */
-
-:root {
-  --black: #000000;
-  --background: #111111;
-  --dark: #181818;
-  --surface: #222222;
-  --light: #f3eee5;
-  --gray: #aaa49c;
-  --gold: #c9a66b;
-  --border: #383838;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: var(--black);
-}
-
-body {
-  margin: 0;
-  background: var(--black);
-  color: var(--light);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button {
-  font: inherit;
-}
-
-
-/* =====================================================
-   2. STARTSEITE: HERO-BEREICH
-   ===================================================== */
-
-.hero {
-  position: relative;
-  min-height: 0;
-  margin: 0;
-  padding: 0 7% 80px;
-  overflow: hidden;
-  background: var(--black);
-}
-
-
-/* =====================================================
-   3. NAVIGATION
-   Desktop:
-   Titel links, Links rechts
-
-   Smartphone:
-   Titel ausgeblendet, Hamburger rechts
-   ===================================================== */
-
-
-/* Desktop-Navigation */
-
-.mobile-nav {
-  position: absolute;
-  top: 0;
-  left: 7%;
-  right: 7%;
-  z-index: 100;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: auto;
-  height: 90px;
-  min-height: 90px;
-  margin: 0;
-  padding: 0;
-}
-
-.mobile-home-link {
-  display: block;
-  flex: 0 0 auto;
-
-  max-width: 300px;
-  margin: 0;
-  padding: 0;
-
-  color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05rem;
-  line-height: 1.15;
-  text-decoration: none;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.mobile-home-link:hover {
-  color: var(--light);
-}
-
-
-/* Rechte Desktop-Navigation */
-
-.nav-right {
-  position: static;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: row;
-  gap: 30px;
-
-  width: auto;
-  height: auto;
-  margin: 0 0 0 auto;
-  padding: 0;
-
-  background: transparent;
-  border: 0;
-}
-
-.nav-right a {
-  display: block;
-
-  width: auto;
-  min-width: 0;
-  min-height: 0;
-  margin: 0;
-  padding: 8px 0;
-
-  border: 0;
-  color: #ffffff;
-  font-size: 0.95rem;
-  line-height: 1.2;
-  white-space: nowrap;
-  text-decoration: none;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.nav-right a:hover {
-  color: var(--gold);
-}
-
-
-/* Startseite nur im mobilen Menü */
-
-.mobile-start-link {
-  display: none;
-}
-
-
-/* Hamburger auf Desktop ausblenden */
-
-.mobile-toggle {
-  display: none;
-}
-
-
-/* =====================================================
-   4. GROSSES STARTSEITEN-BILD
-   ===================================================== */
-
-@media (min-width: 701px) {
-  .full-width-logo {
-    width: 100vw;
-    height: auto;
-    min-height: 0;
-    margin-left: calc(50% - 50vw);
-    overflow: hidden;
-    background: #000000;
-  }
-
-  .full-width-logo img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: none;
-
-    object-fit: contain;
-    object-position: center center;
-    background: #000000;
-  }
-
-  .full-width-logo::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.12) 0%,
-      rgba(0, 0, 0, 0.02) 55%,
-      rgba(0, 0, 0, 0.95) 100%
-    );
-  }
-}
-
-
-/* =====================================================
-   5. TEXT UNTER DEM STARTSEITEN-BILD
-   ===================================================== */
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-
-  max-width: 760px;
+.mystery-map-section {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 65px 0 0;
-
+  padding: 100px 7% 110px;
   background: var(--black);
+}
+
+.mystery-map-intro {
+  max-width: 760px;
+  margin: 0 auto 50px;
   text-align: center;
 }
 
-.eyebrow {
-  margin: 0 0 18px;
-
-  color: var(--gold);
-  font-size: 0.78rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.mystery-map-intro .eyebrow {
+  margin-bottom: 18px;
 }
 
-h1,
-h2,
-h3 {
+.mystery-map-intro h2 {
+  margin: 0 0 24px;
+  color: var(--light);
   font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
   font-weight: normal;
-}
-
-
-.hero-content h1 {
-  margin: 0 auto 25px;
-
-  font-size: clamp(2.5rem, 6vw, 5.3rem);
-  line-height: 1;
-}
-
-.hero-description {
-  max-width: 690px;
-  margin: 0 auto 18px;
-
-  color: var(--gray);
-  font-size: 1.08rem;
-}
-
-
-/* =====================================================
-   6. BUTTONS
-   ===================================================== */
-
-.button {
-  display: inline-block;
-
-  margin-top: 15px;
-  padding: 14px 24px;
-
-  border: 1px solid var(--gold);
-  color: var(--gold);
-
-  font-weight: bold;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.button:hover {
-  background: var(--gold);
-  color: var(--black);
-}
-
-.spotify-button {
-  display: inline-block;
-
-  margin-top: 8px;
-  padding: 13px 22px;
-
-  border: 1px solid var(--gold);
-  background: var(--gold);
-  color: var(--black);
-
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-align: center;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.spotify-button:hover {
-  background: transparent;
-  color: var(--gold);
-}
-
-.text-link {
-  display: inline-block;
-
-  margin-top: 10px;
-  color: var(--gold);
-  font-weight: bold;
-}
-
-.text-link:hover {
-  opacity: 0.7;
-}
-
-
-/* =====================================================
-   7. NEUESTE FOLGEN AUF DER STARTSEITE
-   ===================================================== */
-
-.latest-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 100px 7%;
-
-  background: var(--black);
-}
-
-.latest-section h2 {
-  margin: 0 0 22px;
-
-  font-size: clamp(2rem, 4vw, 3.8rem);
   line-height: 1.05;
 }
 
-.section-intro {
-  max-width: 700px;
-  margin: 0;
-
+.mystery-map-intro > p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
   color: var(--gray);
   font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 
-/* Drei Folgen nebeneinander */
+/* Kartencontainer */
 
-.episode-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-
-  margin-top: 50px;
-}
-
-.latest-episode {
-  display: flex;
-  flex-direction: column;
-
-  min-width: 0;
-  margin: 0;
-  padding: 24px;
-
-  background: var(--dark);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-.latest-episode h3 {
-  margin: 8px 0 14px;
-
-  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
-  line-height: 1.1;
-}
-
-.latest-episode p:not(.episode-meta) {
-  color: var(--gray);
-  font-size: 0.95rem;
-}
-
-.episode-meta {
-  margin: 0 0 8px;
-
-  color: var(--gold);
-  font-size: 0.78rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-
-/* Spotify-Player */
-
-.spotify-player,
-.player {
-  margin: 28px 0 18px;
-  padding: 12px;
-
-  background: var(--dark);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.spotify-player iframe,
-.player iframe {
-  display: block;
-
-  width: 100%;
-  min-height: 152px;
-
-  border: 0;
-  border-radius: 12px;
-}
-
-.latest-episode .spotify-player {
-  margin-top: auto;
-  padding: 0;
-  background: transparent;
-  border: 0;
-}
-
-
-/* Button unter allen Folgen */
-
-.latest-episode .spotify-button {
-  width: 100%;
-  margin-top: auto;
-  text-align: center;
-}
-
-.all-episodes-button {
-  display: inline-block;
-  align-self: flex-start;
-
-  width: fit-content;
-  max-width: max-content;
-
-  margin-top: 35px;
-  padding: 14px 22px;
-
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.all-episodes-button:hover {
-  background: var(--gold);
-  color: var(--black);
-}
-
-
-/* =====================================================
-   8. UNTERSEITEN: HEADER OHNE BILD
-   ===================================================== */
-
-.subpage-header {
+.mystery-map-wrapper {
   position: relative;
-  z-index: 20;
-
-  min-height: 90px;
-  padding: 0 7%;
-
-  background: var(--black);
-  border-bottom: 1px solid var(--border);
-}
-
-
-/* =====================================================
-   9. ÜBER-DEN-PODCAST-SEITE
-   ===================================================== */
-
-.about-page {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 90px 7% 110px;
-
-  background: var(--black);
-}
-
-.about-page h1 {
-  margin: 0 0 30px;
-
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
-}
-
-.about-page p {
-  color: var(--gray);
-  font-size: 1.08rem;
-}
-
-.about-page .intro {
-  color: var(--light);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4rem;
-  line-height: 1.4;
-}
-
-.about-cover {
-  width: 180px;
-  height: 180px;
-  margin-bottom: 35px;
-
-  object-fit: cover;
-  border: 1px solid var(--gold);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-blockquote {
-  margin: 45px 0;
-  padding: 25px 0 25px 25px;
-
-  border-left: 2px solid var(--gold);
-  color: var(--gold);
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.5rem;
-  font-style: italic;
-}
-
-.instagram-link {
-  display: inline-block;
-
-  margin-top: 18px;
-  color: var(--gold);
-  font-weight: bold;
-}
-
-
-/* =====================================================
-   10. FOLGEN-SEITE
-   ===================================================== */
-
-.episodes-page {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 90px 7% 110px;
-
-  background: var(--black);
-}
-
-.episodes-page h1 {
-  max-width: 800px;
-  margin: 0 0 28px;
-
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
-}
-
-.episodes-intro {
-  max-width: 700px;
-  margin: 0 0 70px;
-
-  color: var(--gray);
-  font-size: 1.08rem;
-}
-
-.episodes-list {
   width: 100%;
-}
-
-.episode-card {
-  width: 100%;
-  margin: 0;
-  padding: 42px 0;
-
-  border-top: 1px solid var(--border);
-}
-
-.episode-card:last-child {
-  border-bottom: 1px solid var(--border);
-}
-
-.episode-card h2 {
-  margin: 8px 0 18px;
-
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  line-height: 1.05;
-}
-
-.episode-card p:not(.episode-meta) {
-  max-width: 720px;
-  color: var(--gray);
-  font-size: 1.02rem;
-}
-
-.episode-card .spotify-player {
-  max-width: 760px;
-}
-
-.episode-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 50px;
-}
-
-/* =====================================================
-   H4 ZWISCHENÜBERSCHRIFTEN IN BRONZE / SERIFEN
-   ===================================================== */
-
-.episode-detail h4,
-.episodes-page h4,
-.about-page h4,
-.episode-card h4 {
-  color: var(--gold) !important;
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-weight: 500 !important; /* dicker war 700 */
-  font-size: clamp(1.4rem, 3vw, 2rem) !important; /* größer, responsiv wie h2 */
-  line-height: 1.1 !important;
-  margin-top: 2rem !important;
-  margin-bottom: 0.8rem !important;
-}
-
-/* =====================================================
-   11. FOOTER
-   ===================================================== */
-
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  padding: 35px 7%;
-
-  background: var(--black);
-  border-top: 1px solid var(--border);
-  color: var(--gray);
-
-  font-size: 0.85rem;
-}
-
-footer p {
-  width: 100%;
-  margin: 0;
-}
-
-footer a:hover {
-  color: var(--gold);
-}
-
-
-/* =====================================================
-   12. TABLET
-   ===================================================== */
-
-@media (max-width: 900px) and (min-width: 701px) {
-  .episode-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .mobile-nav {
-    left: 5%;
-    right: 5%;
-  }
-
-  .nav-right {
-    gap: 20px;
-  }
-}
-
-
-/* =====================================================
-   13. SMARTPHONE
-   ===================================================== */
-
-@media (max-width: 700px) {
-  html,
-  body {
-    width: 100%;
-    min-height: 100%;
-    margin: 0;
-    background: #000000;
-    overflow-x: hidden;
-  }
-
-  main,
-  footer,
-  .hero,
-  .latest-section,
-  .about-page,
-  .episodes-page {
-    background: #000000;
-  }
-
-  /* Hero kompakt halten */
-  .hero {
-    min-height: 0;
-    height: auto;
-    padding: 0 0 40px;
-  }
-
-  /* Mobile Navigation */
-  .mobile-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-
-    display: block;
-    width: 100%;
-    height: 76px;
-    min-height: 76px;
-    padding: 0;
-
-    background: rgba(0, 0, 0, 0.45);
-  }
-
-  .mobile-home-link {
-    display: none;
-    visibility: hidden;
-  }
-
-  .mobile-toggle {
-    position: absolute;
-    top: 16px;
-    right: 6%;
-    z-index: 102;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 7px;
-
-    width: 44px;
-    height: 44px;
-    padding: 8px;
-
-    border: 1px solid var(--light);
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-  }
-
-  .mobile-toggle span {
-    display: block;
-
-    width: 24px;
-    height: 2px;
-
-    background: var(--light);
-    transition: transform 0.2s ease;
-  }
-
-  .mobile-toggle.is-open span:first-child {
-    transform: translateY(4.5px) rotate(45deg);
-  }
-
-  .mobile-toggle.is-open span:last-child {
-    transform: translateY(-4.5px) rotate(-45deg);
-  }
-
-  /* Mobile-Menü geschlossen */
-  .nav-right {
-    position: absolute;
-    top: 76px;
-    left: 0;
-    right: 0;
-    z-index: 101;
-
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 8px 6% 14px;
-
-    background: #000000;
-    border-top: 1px solid rgba(201, 166, 107, 0.45);
-    border-bottom: 1px solid var(--border);
-  }
-
-  /* Mobile-Menü geöffnet */
-  .nav-right.is-open {
-    display: flex;
-  }
-
-  .nav-right a {
-    display: block;
-
-    width: 100%;
-    min-height: 44px;
-    padding: 13px 0;
-
-    border-bottom: 1px solid rgba(243, 238, 229, 0.15);
-    color: var(--light);
-
-    font-size: 0.95rem;
-    text-shadow: none;
-  }
-
-  .nav-right a:last-child {
-    border-bottom: 0;
-  }
-
-  .mobile-start-link {
-    display: block;
-  }
-
-  /* Mobile Banner */
-  .full-width-logo {
-    width: 100vw;
-    height: 330px;
-    margin: 0;
-
-    background: #000000;
-  }
-
-  .full-width-logo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center center;
-    background: #000000;
-  }
-
-  .full-width-logo::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.08) 0%,
-      rgba(0, 0, 0, 0.02) 55%,
-      rgba(0, 0, 0, 0.92) 100%
-    );
-  }
-
-  /* Text direkt unter dem Bild */
-  .hero-content {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 26px 6% 0;
-
-    background: #000000;
-  }
-
-  .hero-content h1 {
-    margin-top: 0;
-    margin-bottom: 18px;
-
-    font-size: clamp(2.3rem, 12vw, 4rem);
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  /* Folgen als eine Spalte */
-  .episode-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .latest-section {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 60px 6% 80px;
-  }
-
-  .latest-episode {
-    padding: 22px;
-  }
-
-  /* Unterseiten */
-  .subpage-header {
-    min-height: 76px;
-    padding: 0 6%;
-  }
-
-  .about-page,
-  .episodes-page {
-    width: 100%;
-    padding: 70px 6% 85px;
-  }
-
-  .about-page h1,
-  .episodes-page h1 {
-    font-size: clamp(2.3rem, 11vw, 4rem);
-  }
-
-  .episodes-intro {
-    margin-bottom: 45px;
-  }
-
-  .episode-card {
-    padding: 32px 0;
-  }
-
-  .episode-card h2 {
-    font-size: 2.2rem;
-  }
-
-  .about-cover {
-    width: 140px;
-    height: 140px;
-  }
-
-  .spotify-button {
-    width: 100%;
-    text-align: center;
-  }
-
-  footer {
-    padding: 30px 6%;
-  }
-}
-
-@media (max-width: 900px) and (min-width: 701px) {
-  .episode-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 700px) {
-  .episode-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
-
-
-/* =====================================================
-   14. KLEINE SMARTPHONES
-   ===================================================== */
-
-@media (max-width: 380px) {
-  .full-width-logo {
-    height: 290px;
-  }
-
-  .hero-content {
-    padding-top: 22px;
-  }
-
-  .nav-right a {
-    font-size: 0.9rem;
-  }
-}
-
-/* =====================================================
-   FOLGENKARTEN:
-   Rahmen behalten, zusätzliche Trenner entfernen
-   ===================================================== */
-
-.episodes-grid .full-episode,
-.episodes-list .full-episode,
-.episodes-grid .episode-card,
-.episodes-list .episode-card {
-  position: relative !important;
-
-  border: 1px solid #383838 !important;
-  border-top: 1px solid #383838 !important;
-  border-radius: 8px !important;
-
-  background: #181818 !important;
-}
-
-/* Kupferfarbene Zusatzlinie entfernen */
-
-.episodes-grid .full-episode::before,
-.episodes-list .full-episode::before,
-.episodes-grid .episode-card::before,
-.episodes-list .episode-card::before {
-  display: none !important;
-  content: none !important;
-}
-
-/* Ruhiger Abstand zwischen den Karten */
-
-.episodes-grid {
-  row-gap: 26px !important;
-  column-gap: 26px !important;
-}
-
-/* =====================================================
-   ABSTAND ZWISCHEN DEN FOLGENKARTEN
-   ===================================================== */
-
-/* =====================================================
-   FOLGEN-SEITE AUF DESKTOP BREITER MACHEN
-   ===================================================== */
-
-@media (min-width: 1200px) {
-  .episodes-page {
-    width: calc(100% - 80px) !important;
-    max-width: 1440px !important;
-    margin: 0 auto !important;
-    padding: 90px 0 120px !important;
-  }
-
-  .episodes-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 32px !important;
-    width: 100% !important;
-  }
-
-  .episodes-grid .full-episode {
-    width: 100% !important;
-    min-width: 0 !important;
-    padding: 30px !important;
-  }
-
-  .episodes-grid .full-episode-content {
-    width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  .episodes-grid .podcast-player {
-    width: 100% !important;
-  }
-}
-
-
-/* Mittlere Desktop- und Tablet-Breite */
-
-@media (min-width: 701px) and (max-width: 1199px) {
-  .episodes-page {
-    width: calc(100% - 60px) !important;
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-    padding: 80px 0 100px !important;
-  }
-
-  .episodes-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 26px !important;
-    width: 100% !important;
-  }
-
-  .episodes-grid .full-episode {
-    width: 100% !important;
-    min-width: 0 !important;
-    padding: 26px !important;
-  }
-}
-
-
-/* Smartphone bleibt einspaltig */
-
-@media (max-width: 700px) {
-  .episodes-page {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 70px 6% 90px !important;
-  }
-
-  .episodes-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
-    width: 100% !important;
-  }
-
-  .episodes-grid .full-episode {
-    width: 100% !important;
-    padding: 22px !important;
-  }
-}
-
-/* Episoden-Unterseite: Layout mit Instagram links, Text rechts */
-
-.episode-detail {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 90px 7% 110px;
-  background: var(--black);
-}
-
-.episode-detail h1 {
-  margin: 0 0 28px;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
-}
-
-/* Zweispaltiges Layout: Instagram + Text */
-
-.episode-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  margin-top: 32px;
-  margin-bottom: 40px;
-}
-
-.episode-instagram {
-  flex: 1 1 55%;
-}
-
-.episode-notes {
-  flex: 1 1 45%;
-}
-
-.episode-notes p {
-  color: var(--gray);
-  font-size: 1.02rem;
-}
-
-.episode-meta {
-  margin: 0 0 12px;
-  color: var(--gold);
-  font-size: 0.78rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-/* Mobile: untereinander statt nebeneinander */
-
-@media (max-width: 700px) {
-  .episode-detail {
-    width: 100%;
-    padding: 70px 6% 90px;
-  }
-
-  .episode-layout {
-    flex-direction: column;
-    gap: 22px;
-  }
-}
-
-
-/* Nur für die Player auf der Startseite */
-
-#neueste-folgen .spotify-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-}
-
-#neueste-folgen .spotify-grid > div {
-  width: 100%;
-}
-
-#neueste-folgen .spotify-grid iframe {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-}
-
-
-
-
-
-/* =====================================================
-   SPOTIFY LAZY PLAYER
-   Optisch näher am ursprünglichen Spotify-Embed
-   ===================================================== */
-
-.spotify-lazy {
-  width: 100%;
-  height: 352px;
-  min-height: 352px;
-}
-
-.spotify-placeholder {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 352px;
-
-  padding: 30px;
-
+  height: 620px;
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      135deg,
-      #181818 0%,
-      #202020 50%,
-      #151515 100%
-    );
+  border: 1px solid var(--border);
+  border-radius: 10px;
 
-  border: 1px solid #383838;
-  border-radius: 12px;
+  background: #111111;
 
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+#mystery-map {
+  width: 100%;
+  height: 100%;
+  background: #111111;
 }
 
 
-/* dezenter Hintergrund-Schimmer */
+/* Hinweis unten links */
 
-.spotify-placeholder::before {
-  content: "";
-
+.map-hint {
   position: absolute;
-  top: -120px;
-  right: -80px;
+  left: 22px;
+  bottom: 22px;
+  z-index: 500;
 
-  width: 300px;
-  height: 300px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 9px 13px;
+
+  background: rgba(0, 0, 0, 0.82);
+
+  border: 1px solid rgba(201, 166, 107, 0.35);
+  border-radius: 4px;
+
+  color: var(--gray);
+
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+
+  backdrop-filter: blur(8px);
+}
+
+.map-hint-dot {
+  display: block;
+
+  width: 7px;
+  height: 7px;
 
   border-radius: 50%;
 
-  background: rgba(201, 166, 107, 0.05);
+  background: var(--gold);
 
-  pointer-events: none;
-}
-
-
-/* Inhalt */
-
-.spotify-placeholder-content {
-  position: relative;
-  z-index: 2;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-
-/* Episodennummer */
-
-.spotify-episode-number {
-  margin-bottom: 8px;
-
-  color: #c9a66b;
-
-  font-size: 0.72rem;
-  font-weight: bold;
-
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-
-/* Episodentitel */
-
-.spotify-placeholder-content strong {
-  display: block;
-
-  margin-bottom: 5px;
-
-  color: #f3eee5;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.8rem;
-  font-weight: normal;
-  line-height: 1.15;
-}
-
-
-/* Untertitel */
-
-.spotify-placeholder-content span {
-  display: block;
-
-  margin-bottom: 20px;
-
-  color: #aaa49c;
-
-  font-size: 0.82rem;
-}
-
-
-/* Play-Button */
-
-.spotify-placeholder-content button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 175px;
-
-  padding: 12px 20px;
-
-  border: 1px solid #c9a66b;
-  border-radius: 2px;
-
-  background: #c9a66b;
-  color: #000000;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.85rem;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.spotify-placeholder-content button:hover {
-  background: transparent;
-  color: #c9a66b;
-}
-
-.spotify-placeholder-content button:active {
-  transform: scale(0.98);
+  box-shadow:
+    0 0 8px rgba(201, 166, 107, 0.9);
 }
 
 
 /* =====================================================
-   ECHTER SPOTIFY-PLAYER NACH DEM KLICK
+   GOLDENE MARKER
    ===================================================== */
 
-.spotify-lazy iframe {
+.mystery-marker {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 0;
+}
+
+.mystery-marker::before {
+  content: "";
+
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  border: 1px solid rgba(201, 166, 107, 0.35);
+  border-radius: 50%;
+
+  animation: mysteryPulse 2.5s infinite;
+}
+
+.mystery-marker span {
+  position: relative;
+  z-index: 2;
+
   display: block;
 
-  width: 100%;
-  height: 352px;
-  min-height: 352px;
+  width: 9px;
+  height: 9px;
 
-  border: 0;
-  border-radius: 12px;
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  box-shadow:
+    0 0 5px rgba(201, 166, 107, 0.8),
+    0 0 14px rgba(201, 166, 107, 0.5);
+}
+
+@keyframes mysteryPulse {
+
+  0% {
+    transform: scale(0.75);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: scale(0.75);
+    opacity: 0.8;
+  }
+
+}
+
+
+/* =====================================================
+   LEAFLET POPUPS
+   ===================================================== */
+
+.leaflet-popup-content-wrapper {
+  padding: 0;
+
+  background: #181818;
+
+  border: 1px solid #383838;
+  border-radius: 7px;
+
+  color: var(--light);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.leaflet-popup-content {
+  width: 280px !important;
+
+  margin: 0;
+  padding: 22px;
+}
+
+.leaflet-popup-tip {
+  background: #181818;
+}
+
+.leaflet-popup-close-button {
+  color: var(--gray) !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: var(--gold) !important;
+}
+
+
+/* Popup Kategorie */
+
+.mystery-popup-category {
+  margin-bottom: 7px;
+
+  color: var(--gold);
+
+  font-size: 0.68rem;
+  font-weight: bold;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+
+/* Popup Titel */
+
+.mystery-popup h3 {
+  margin: 0 0 7px;
+
+  color: var(--light);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+
+/* Popup Ort */
+
+.mystery-popup-location {
+  margin-bottom: 14px;
+
+  color: var(--gold);
+
+  font-size: 0.78rem;
+}
+
+
+/* Popup Beschreibung */
+
+.mystery-popup p {
+  margin: 0 0 18px;
+
+  color: var(--gray);
+
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+
+/* Popup Link */
+
+.mystery-popup-link {
+  display: inline-block;
+
+  padding: 9px 13px;
+
+  border: 1px solid var(--gold);
+
+  color: var(--gold);
+
+  font-size: 0.78rem;
+  font-weight: bold;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.mystery-popup-link:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+
+/* =====================================================
+   LEAFLET ZOOM
+   ===================================================== */
+
+.leaflet-control-zoom {
+  margin-right: 18px !important;
+  margin-bottom: 18px !important;
+
+  border: 1px solid #383838 !important;
+}
+
+.leaflet-control-zoom a {
+  background: #181818 !important;
+  color: var(--gold) !important;
+
+  border-bottom: 1px solid #383838 !important;
+}
+
+.leaflet-control-zoom a:last-child {
+  border-bottom: 0 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #222222 !important;
 }
 
 
@@ -1337,24 +319,41 @@ footer a:hover {
 
 @media (max-width: 700px) {
 
-  .spotify-lazy {
-    height: 352px;
-    min-height: 352px;
+  .mystery-map-section {
+    padding: 75px 6% 80px;
   }
 
-  .spotify-placeholder {
-    height: 352px;
-    min-height: 352px;
-
-    padding: 25px 20px;
+  .mystery-map-intro {
+    margin-bottom: 35px;
   }
 
-  .spotify-placeholder-content strong {
-    font-size: 1.55rem;
+  .mystery-map-intro h2 {
+    font-size: clamp(2.1rem, 10vw, 3.3rem);
   }
 
-  .spotify-placeholder-content span {
-    font-size: 0.78rem;
+  .mystery-map-intro > p:last-child {
+    font-size: 0.95rem;
+  }
+
+  .mystery-map-wrapper {
+    height: 500px;
+    border-radius: 8px;
+  }
+
+  .map-hint {
+    left: 14px;
+    bottom: 14px;
+
+    font-size: 0.68rem;
+  }
+
+  .leaflet-popup-content {
+    width: 245px !important;
+    padding: 18px;
+  }
+
+  .mystery-popup h3 {
+    font-size: 1.35rem;
   }
 
 }
