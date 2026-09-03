@@ -162,7 +162,7 @@ display: none;
 
 .full-width-logo {
 width: 100vw;
-        height: 900 px;
+        height: auto px;
         margin-left: calc(50% - 50vw);
         overflow: hidden;
 background: #000000;
