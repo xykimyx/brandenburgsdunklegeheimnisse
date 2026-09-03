@@ -2054,7 +2054,7 @@ font-size: 0.9rem;
             rgba(5, 5, 5, 0.72) 65%,
             rgba(5, 5, 5, 0.25) 100%
         ),
-        url("images/dunkler-wald.jpg") center right / cover no-repeat;
+        url("/dunkler-wald.jpg") center right / cover no-repeat;
 
     border-top: 1px solid rgba(190, 150, 70, 0.15);
     border-bottom: 1px solid rgba(190, 150, 70, 0.15);
