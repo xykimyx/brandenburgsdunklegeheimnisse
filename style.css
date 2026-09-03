@@ -2035,4 +2035,253 @@ font-size: 0.9rem;
   transform: translateY(-2px);
 }
 
+/* =========================================
+   STORY INTRO
+========================================= */
 
+.story-intro {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #050505 0%,
+            rgba(5, 5, 5, 0.96) 35%,
+            rgba(5, 5, 5, 0.72) 65%,
+            rgba(5, 5, 5, 0.25) 100%
+        ),
+        url("images/dunkler-wald.jpg") center right / cover no-repeat;
+
+    border-top: 1px solid rgba(190, 150, 70, 0.15);
+    border-bottom: 1px solid rgba(190, 150, 70, 0.15);
+}
+
+.story-intro-content {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.story-intro h2 {
+    max-width: 650px;
+    margin: 15px 0 25px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 400;
+    line-height: 0.95;
+    color: #eee9df;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.eyebrow {
+    margin: 0;
+
+    color: #b9944d;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.gold-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    width: 150px;
+    margin: 0 0 28px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+
+    background: rgba(185, 148, 77, 0.65);
+}
+
+.gold-divider span {
+    color: #b9944d;
+    font-size: 12px;
+}
+
+.story-text {
+    max-width: 620px;
+
+    color: #bdbab4;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.story-text-last {
+    margin-top: 25px;
+    color: #e1ddd5;
+}
+
+.gold-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+
+    border: 1px solid #9e7935;
+    color: #c29b52;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.gold-button:hover {
+    background: #9e7935;
+    color: #080808;
+}
+
+
+/* =========================================
+   THEMEN
+========================================= */
+
+.themes {
+    padding: 85px 5% 75px;
+    background: #050505;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    margin: 12px 0 20px;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    color: #eee9df;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-heading .gold-divider {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.theme-grid {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.theme-card {
+    min-height: 180px;
+    padding: 30px;
+
+    border: 1px solid rgba(170, 130, 55, 0.35);
+    background: #101010;
+
+    text-align: left;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.theme-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(190, 150, 70, 0.8);
+    background: #141414;
+}
+
+.theme-icon {
+    margin-bottom: 15px;
+
+    color: #b9944d;
+    font-size: 28px;
+}
+
+.theme-card h3 {
+    margin: 0 0 10px;
+
+    color: #c09a54;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.theme-card p {
+    margin: 0;
+
+    color: #a9a6a0;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.theme-bottom {
+    margin: 35px auto 0;
+
+    color: #8f8b84;
+    font-size: 13px;
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .story-intro {
+        min-height: auto;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5, 5, 5, 0.9),
+                rgba(5, 5, 5, 0.96)
+            ),
+            url("images/dunkler-wald.jpg") center / cover no-repeat;
+    }
+
+    .story-intro-content {
+        padding: 65px 0;
+    }
+
+    .story-intro h2 {
+        font-size: 38px;
+    }
+
+    .story-text {
+        font-size: 14px;
+    }
+
+    .theme-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .theme-card {
+        min-height: auto;
+        padding: 25px;
+    }
+
+}
