@@ -2259,7 +2259,7 @@ font-size: 0.9rem;
                 rgba(5, 5, 5, 0.9),
                 rgba(5, 5, 5, 0.96)
             ),
-            url("images/dunkler-wald.jpg") center / cover no-repeat;
+            url("/dunkler-wald.jpg") center / cover no-repeat;
     }
 
     .story-intro-content {
