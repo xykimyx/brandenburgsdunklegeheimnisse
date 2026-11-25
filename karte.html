@@ -1,1 +1,351 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Interaktive Karte – Brandenburgs dunkle Geheimnisse</title>
+
+  <!-- LEAFLET CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+  <style>
+
+    /* ==========================================
+       GRUNDLAYOUT
+       ========================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111111;
+      font-family: Arial, sans-serif;
+    }
+
+    #mystery-map {
+      width: 100%;
+      height: 550px;
+      background: #111111;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+
+    /* ==========================================
+       GOLDENER MYSTERY-MARKER
+       ========================================== */
+
+    .mystery-marker {
+      background: transparent;
+      border: none;
+    }
+
+    .mystery-marker span {
+      display: block;
+      width: 18px;
+      height: 18px;
+      background: #c9a66b;
+      border: 3px solid #f3eee5;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(201, 166, 107, 0.9);
+      animation: mysteryPulse 2s infinite;
+    }
+
+    @keyframes mysteryPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(201, 166, 107, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 12px rgba(201, 166, 107, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(201, 166, 107, 0);
+      }
+    }
+
+
+    /* ==========================================
+       POP-UP DESIGN
+       ========================================== */
+
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+      background: #1c1c1c;
+      color: #f3eee5;
+    }
+
+    .leaflet-popup-content-wrapper {
+      border: 1px solid #c9a66b;
+      border-radius: 8px;
+    }
+
+    .leaflet-popup-content {
+      margin: 16px;
+      width: 220px !important;
+      font-family: Arial, sans-serif;
+    }
+
+    .mystery-popup-category {
+      color: #c9a66b;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .mystery-popup h3 {
+      color: #f3eee5;
+      font-size: 17px;
+      line-height: 1.3;
+      margin: 0 0 8px;
+    }
+
+    .mystery-popup-location {
+      color: #aaa49c;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .mystery-popup p {
+      color: #d5d0c8;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 0 0 14px;
+    }
+
+    .mystery-popup-link {
+      display: inline-block;
+      color: #c9a66b;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .mystery-popup-link:hover {
+      color: #f3eee5;
+    }
+
+    .leaflet-container a.leaflet-popup-close-button {
+      color: #c9a66b;
+    }
+
+
+    /* ==========================================
+       MOBILE
+       ========================================== */
+
+    @media (max-width: 600px) {
+      #mystery-map {
+        height: 450px;
+        border-radius: 8px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ==========================================
+       KARTENBEREICH
+       ========================================== -->
+
+  <div id="mystery-map"></div>
+
+
+  <!-- ==========================================
+       LEAFLET
+       ========================================== -->
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const mapElement = document.getElementById("mystery-map");
+
+      if (!mapElement || typeof L === "undefined") {
+        return;
+      }
+
+
+      /* ==========================================
+         KARTE INITIALISIEREN
+         ========================================== */
+
+      const map = L.map("mystery-map", {
+        zoomControl: false,
+        scrollWheelZoom: false
+      });
+
+      map.setView([52.55, 13.35], 7);
+
+
+      /* ==========================================
+         DUNKLE KARTENDARSTELLUNG
+         ========================================== */
+
+      L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+          subdomains: "abcd",
+          maxZoom: 20
+        }
+      ).addTo(map);
+
+
+      /* ==========================================
+         ZOOM-BUTTONS
+         ========================================== */
+
+      L.control.zoom({
+        position: "bottomright"
+      }).addTo(map);
+
+
+      /* ==========================================
+         GOLDENER MYSTERY-MARKER
+         ========================================== */
+
+      const mysteryIcon = L.divIcon({
+        className: "mystery-marker",
+        html: "<span></span>",
+        iconSize: [24, 24],
+        iconAnchor: [12, 12],
+        popupAnchor: [0, -14]
+      });
+
+
+      /* ==========================================
+         EPISODEN / ORTE
+         ========================================== */
+
+      const mysteries = [
+
+        {
+          title: "Die Glocken von Zelsow",
+          location: "Zelsow · Uckermark",
+          category: "Sage",
+          description: "Ein verschwundenes Dorf, drei Glocken und eine geheimnisvolle Stimme aus dem Wasser.",
+          coordinates: [53.30, 13.95],
+          link: "folge-1-glocken-von-zelsow.html"
+        },
+
+        {
+          title: "Das Hoawief",
+          location: "Brüssow · Uckermark",
+          category: "Sage",
+          description: "Eine alte Wirtschafterin, ein schwerer Schlüsselbund und ein Geist, der keine Ruhe findet.",
+          coordinates: [53.40, 14.13],
+          link: "folge-2-das-hoawief.html"
+        },
+
+        {
+          title: "Der Teufelssee",
+          location: "Ravensberge · Potsdam-Mittelmark",
+          category: "Sage & Natur",
+          description: "Ein geheimnisvoller Waldsee, um den sich eine alte Geschichte von einem Mönch und dem Teufel rankt.",
+          coordinates: [52.29, 12.87],
+          link: "folge-3-teufelssee.html"
+        },
+
+        {
+          title: "Der Wassermann vom Spreewald",
+          location: "Raddusch · Spreewald",
+          category: "Sage",
+          description: "Der geheimnisvolle Wassermann soll in den Fließen des Spreewaldes leben und Menschen in sein Reich locken.",
+          coordinates: [51.826, 14.014],
+          link: "folge-4-wassermann.html"
+        },
+
+        {
+          title: "Das Brieselanger Licht",
+          location: "Brieselang · Havelland",
+          category: "Sage",
+          description: "Ein geheimnisvolles Licht soll seit Jahrzehnten im Brieselanger Forst auftauchen. Spuk, Sage oder doch eine natürliche Erklärung?",
+          coordinates: [52.585, 13.009],
+          link: "folge-5-brieselanger-licht.html"
+        },
+
+        {
+          title: "Die Mumie von Kampehl",
+          location: "Kampehl · Ostprignitz-Ruppin",
+          category: "Sage",
+          description: "Fluch, Sage oder natürliche Mumifizierung?",
+          coordinates: [52.8650, 12.4582],
+          link: "folge-6-mumie-kampehl.html"
+        }
+
+      ];
+
+
+      /* ==========================================
+         MARKER AUF KARTE SETZEN
+         ========================================== */
+
+      mysteries.forEach(function (mystery) {
+
+        const marker = L.marker(
+          mystery.coordinates,
+          {
+            icon: mysteryIcon
+          }
+        ).addTo(map);
+
+
+        marker.bindPopup(
+
+          `
+            <div class="mystery-popup">
+
+              <div class="mystery-popup-category">
+                ${mystery.category}
+              </div>
+
+              <h3>
+                ${mystery.title}
+              </h3>
+
+              <div class="mystery-popup-location">
+                ${mystery.location}
+              </div>
+
+              <p>
+                ${mystery.description}
+              </p>
+
+              <a
+                href="${mystery.link}"
+                class="mystery-popup-link"
+              >
+                Geschichte entdecken →
+              </a>
+
+            </div>
+          `
+
+        );
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
+
